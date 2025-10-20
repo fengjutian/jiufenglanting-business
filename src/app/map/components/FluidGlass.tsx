@@ -93,7 +93,11 @@ const ModeWrapper = memo(function ModeWrapper({
   const { nodes } = useGLTF(glb);
   const buffer = useFBO();
   const { viewport: vp } = useThree();
-  const [scene] = useState<THREE.Scene>(() => new THREE.Scene());
+  // Use a single scene instance that persists across renders
+  const sceneRef = useRef<THREE.Scene>();
+  if (!sceneRef.current) {
+    sceneRef.current = new THREE.Scene();
+  }
   const geoWidthRef = useRef<number>(1);
 
   useEffect(() => {
@@ -117,7 +121,7 @@ const ModeWrapper = memo(function ModeWrapper({
     }
 
     gl.setRenderTarget(buffer);
-    gl.render(scene, camera);
+    gl.render(sceneRef.current, camera);
     gl.setRenderTarget(null);
     gl.setClearColor(0x5227ff, 1);
   });
@@ -133,7 +137,7 @@ const ModeWrapper = memo(function ModeWrapper({
 
   return (
     <>
-      {createPortal(children, scene)}
+      {createPortal(children, sceneRef.current)}
       <mesh scale={[vp.width, vp.height, 1]}>
         <planeGeometry />
         <meshBasicMaterial map={buffer.texture} transparent />
