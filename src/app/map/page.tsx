@@ -6,7 +6,9 @@ import styles from './styles.module.css'
 import Dock from '@/components/Dock';
 import MapInit from './mapInit';
 import FluidGlass from './components/FluidGlass'
-
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
+import { Config } from './components/config'
 
 const JiuFengMap : React.FC = () => {
   const [data, setData] = useState();
@@ -16,12 +18,18 @@ const JiuFengMap : React.FC = () => {
     return 
   }
 
+  const [isOpen, setIsOpen] = React.useState(false)
+  const toggleDrawer = () => {
+      setIsOpen((prevState) => !prevState)
+  }
+
   const items = [
     { icon: <span style={{ fontSize: '18px' }}>🏠</span>, label: 'Home', onClick: () => alert('Home!') },
     { icon: <span style={{ fontSize: '18px' }}>🗃️</span>, label: 'Archive', onClick: () => alert('Archive!') },
     { icon: <span style={{ fontSize: '18px' }}>👤</span>, label: 'Profile', onClick: () => alert('Profile!') },
-    { icon: <span style={{ fontSize: '18px' }}>⚙️</span>, label: 'Settings', onClick: () => alert('Settings!') },
+    { icon: <span style={{ fontSize: '18px' }}>⚙️</span>, label: 'Settings', onClick: () => toggleDrawer() },
   ];
+
 
   return (
     <div>
@@ -47,6 +55,8 @@ const JiuFengMap : React.FC = () => {
         baseItemSize={50}
         magnification={70}
       />
+
+      <Config isOpen={isOpen} />
     </div>
   );
 }
