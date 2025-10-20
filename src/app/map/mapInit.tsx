@@ -15,7 +15,9 @@ const initializeMap = async (): Promise<void> => {
     // 创建地图实例
     const amap = new AMap.Map('mapContainer', {
       zoom: 15, //初始化地图层级
-      center: position //初始化地图中心点
+      center: position,
+      mapStyle: 'amap://styles/light',
+
     });
     
     // 创建标记
