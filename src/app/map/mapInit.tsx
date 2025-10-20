@@ -30,7 +30,7 @@ const initializeMap = async (): Promise<void> => {
     const amap = new AMap.Map('mapContainer', {
       zoom: 15, //初始化地图层级
       center: position,
-      mapStyle: mapStyleList[2],
+      mapStyle: mapStyleList[0],
     });
     
     // 创建标记
@@ -42,9 +42,18 @@ const initializeMap = async (): Promise<void> => {
     console.error('地图初始化失败:', error);
   }
 };
+
+const getBusinessData = async () => {
+  const res = await fetch('/api/excel');
+  const list = await res.json();
+
+  console.log(list);
+
+}
  
 const MapInit = () => {
   useEffect(() => {
+    getBusinessData();
     initializeMap();
   }, []);
 
