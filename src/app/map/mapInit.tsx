@@ -4,6 +4,20 @@ import AMapLoader from '@amap/amap-jsapi-loader';
 const position = [118.881076,31.960958]
 const key = '5131350db8ad49230fd4c7f3cab4f1d8'
 
+const mapStyleList = [
+  'amap://styles/normal',
+  'amap://styles/dark',
+  'amap://styles/light',
+  'amap://styles/whitesmoke',
+  'amap://styles/fresh',
+  'amap://styles/grey',
+  'amap://styles/graffiti',
+  'amap://styles/macaron',
+  'amap://styles/blue',
+  'amap://styles/darkblue',
+  'amap://styles/wine',
+]
+
 const initializeMap = async (): Promise<void> => {
   try {
     const AMap = await AMapLoader.load({
@@ -16,8 +30,7 @@ const initializeMap = async (): Promise<void> => {
     const amap = new AMap.Map('mapContainer', {
       zoom: 15, //初始化地图层级
       center: position,
-      mapStyle: 'amap://styles/light',
-
+      mapStyle: mapStyleList[2],
     });
     
     // 创建标记
