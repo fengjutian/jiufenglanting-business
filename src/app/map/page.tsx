@@ -32,7 +32,7 @@ const JiuFengMap : React.FC = () => {
 
   // 确保在客户端环境中渲染地图组件
   if (typeof window === 'undefined') {
-    return <div>地图加载中...</div>;
+    return 
   }
 
   const items = [
@@ -95,7 +95,7 @@ const JiuFengMap : React.FC = () => {
 const Position = () => {
   // 确保在客户端环境中渲染 APILoader
   if (typeof window === 'undefined') {
-    return <div>地图加载中...</div>;
+    return;
   }
 
   return (
