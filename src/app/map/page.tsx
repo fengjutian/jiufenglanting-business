@@ -3,6 +3,8 @@
 import React, { useEffect, useRef, Fragment, useState } from 'react';
 import { Button } from "@/components/ui/button"
 
+import Dock from '@/components/Dock';
+
 
 import FluidGlass from './components/FluidGlass'
 
@@ -33,10 +35,17 @@ const JiuFengMap : React.FC = () => {
     return <div>地图加载中...</div>;
   }
 
+  const items = [
+    { icon: <span style={{ fontSize: '18px' }}>🏠</span>, label: 'Home', onClick: () => alert('Home!') },
+    { icon: <span style={{ fontSize: '18px' }}>🗃️</span>, label: 'Archive', onClick: () => alert('Archive!') },
+    { icon: <span style={{ fontSize: '18px' }}>👤</span>, label: 'Profile', onClick: () => alert('Profile!') },
+    { icon: <span style={{ fontSize: '18px' }}>⚙️</span>, label: 'Settings', onClick: () => alert('Settings!') },
+  ];
+
   return (
     <div>
 
-      <div style={{ height: '600px', position: 'relative' }}>
+      {/* <div style={{ height: '600px', position: 'relative' }}>
         <FluidGlass 
           mode="lens" // or "bar", "cube"
           lensProps={{
@@ -46,12 +55,15 @@ const JiuFengMap : React.FC = () => {
             chromaticAberration: 0.1,
             anisotropy: 0.01  
           }}
-
         />
-      </div>
+      </div> */}
 
 
-      <Button>Click me</Button>
+
+ 
+
+
+      {/* <Button>Click me</Button> */}
       <Map style={{ height: '100vh' }}>
       <ScaleControl offset={[16, 30]} position="LB" />
       <ToolBarControl offset={[16, 10]} position="RB" />
@@ -69,6 +81,13 @@ const JiuFengMap : React.FC = () => {
           }}
       />
       </Map>
+
+      <Dock 
+        items={items}
+        panelHeight={68}
+        baseItemSize={50}
+        magnification={70}
+      />
     </div>
   );
 }
