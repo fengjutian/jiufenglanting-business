@@ -1,8 +1,5 @@
-// 导入XLSX库，用于Excel文件的读取和处理
 import * as XLSX from "xlsx";
-// 导入path模块，用于处理文件路径
 import path from "path";
-// 导入fs模块，用于文件系统操作
 import fs from "fs";
 
 // 定义API处理函数，用于处理来自客户端的请求（Next.js 13+ Route Handler）
