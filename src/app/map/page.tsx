@@ -3,6 +3,9 @@
 import React, { useEffect, useRef, Fragment, useState } from 'react';
 import { Button } from "@/components/ui/button"
 
+
+import FluidGlass from './components/FluidGlass'
+
 // 延迟导入 AMap 组件，确保只在客户端执行
 let Map: any;
 let APILoader: any;
@@ -32,6 +35,22 @@ const JiuFengMap : React.FC = () => {
 
   return (
     <div>
+
+      <div style={{ height: '600px', position: 'relative' }}>
+        <FluidGlass 
+          mode="lens" // or "bar", "cube"
+          lensProps={{
+            scale: 0.25,
+            ior: 1.15,
+            thickness: 5,
+            chromaticAberration: 0.1,
+            anisotropy: 0.01  
+          }}
+
+        />
+      </div>
+
+
       <Button>Click me</Button>
       <Map style={{ height: '100vh' }}>
       <ScaleControl offset={[16, 30]} position="LB" />
