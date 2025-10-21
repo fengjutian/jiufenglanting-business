@@ -49,6 +49,11 @@ const getBusinessData = async () => {
 
   console.log(list);
 
+  const businessRes = await fetch('/api/business');
+  const businessList = await businessRes.json();
+
+  console.log(businessList);
+
 }
  
 const MapInit = () => {
