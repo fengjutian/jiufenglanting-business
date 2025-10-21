@@ -52,7 +52,7 @@ const getBusinessData = async () => {
   const businessRes = await fetch('/api/business');
   const businessList = await businessRes.json();
 
-  console.log(businessList);
+  console.log(12, businessList);
 
 }
  
