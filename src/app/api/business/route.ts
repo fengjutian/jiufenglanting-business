@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
+import * as XLSX from 'xlsx';
 
 // 定义 Business 数据类型
 interface BusinessData {
@@ -14,12 +15,11 @@ interface BusinessData {
   otherInfo?: string | null;
 }
 
-// 获取业务数据的 GET 方法
 export async function GET(request: Request) {
   try {
-    // 从 URL 中提取 id 参数
     const url = new URL(request.url);
     const idParam = url.searchParams.get('id');
+    const exportParam = url.searchParams.get('export');
     
     if (idParam) {
       // 获取单个业务
@@ -42,9 +42,89 @@ export async function GET(request: Request) {
         );
       }
       
+      // 如果请求导出单个业务
+      if (exportParam === 'excel') {
+        // 创建工作簿和工作表
+        const wb = XLSX.utils.book_new();
+        const ws = XLSX.utils.json_to_sheet([business]);
+        
+        // 设置列宽（根据实际内容调整）
+        const colWidths = [
+          { wch: 10 }, // id
+          { wch: 25 }, // name
+          { wch: 30 }, // email
+          { wch: 40 }, // address
+          { wch: 15 }, // type
+          { wch: 20 }, // contact
+          { wch: 10 }, // rating
+          { wch: 15 }, // latitude
+          { wch: 15 }, // longitude
+          { wch: 50 }  // otherInfo
+        ];
+        ws['!cols'] = colWidths;
+        
+        // 添加工作表到工作簿
+        XLSX.utils.book_append_sheet(wb, ws, 'Business Details');
+        
+        // 生成Excel文件的Buffer
+        const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+        
+        // 创建Blob
+        const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        
+        // 返回Excel文件
+        return new Response(blob, {
+          status: 200,
+          headers: {
+            'Content-Disposition': `attachment; filename="business_${businessId}.xlsx"`,
+            'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          }
+        });
+      }
+      
       return NextResponse.json(business, { status: 200 });
+    } else if (exportParam === 'excel') {
+      // 导出所有业务为Excel
+      const businesses = await prisma.business.findMany();
+      
+      // 创建工作簿和工作表
+      const wb = XLSX.utils.book_new();
+      const ws = XLSX.utils.json_to_sheet(businesses);
+      
+      // 设置列宽
+      const colWidths = [
+        { wch: 10 }, // id
+        { wch: 25 }, // name
+        { wch: 30 }, // email
+        { wch: 40 }, // address
+        { wch: 15 }, // type
+        { wch: 20 }, // contact
+        { wch: 10 }, // rating
+        { wch: 15 }, // latitude
+        { wch: 15 }, // longitude
+        { wch: 50 }  // otherInfo
+      ];
+      ws['!cols'] = colWidths;
+      
+      // 添加工作表到工作簿
+      XLSX.utils.book_append_sheet(wb, ws, 'All Businesses');
+      
+      // 生成Excel文件的Buffer
+      const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+      
+      // 创建Blob
+      const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      
+      // 返回Excel文件
+      return new Response(blob, {
+        status: 200,
+        headers: {
+          'Content-Disposition': `attachment; filename="business_export_${new Date().toISOString().split('T')[0]}.xlsx"`,
+          'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        }
+      });
     } else {
-      // 获取所有业务
+      // 获取所有业务（默认返回JSON）
       const businesses = await prisma.business.findMany();
       return NextResponse.json(businesses, { status: 200 });
     }
