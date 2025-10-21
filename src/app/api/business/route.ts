@@ -5,7 +5,6 @@ import { Prisma } from '@prisma/client';
 import { writeFileSync, unlinkSync } from 'fs';
 import { randomUUID } from 'crypto';
 
-// 定义 Business 数据类型
 interface BusinessData {
   name: string;
   email: string;
