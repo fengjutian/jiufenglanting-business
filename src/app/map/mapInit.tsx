@@ -83,6 +83,78 @@ const exportBusinessToExcel = async () => {
     alert('导出Excel失败，请稍后重试');
   }
 };
+
+// 导入Excel文件的函数
+const importBusinessFromExcel = async (file: File) => {
+  try {
+    // 显示加载提示
+    const loading = document.createElement('div');
+    loading.textContent = '正在导入数据...';
+    loading.style.position = 'fixed';
+    loading.style.top = '50%';
+    loading.style.left = '50%';
+    loading.style.transform = 'translate(-50%, -50%)';
+    loading.style.padding = '20px';
+    loading.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    loading.style.color = 'white';
+    loading.style.borderRadius = '8px';
+    loading.style.zIndex = '9999';
+    document.body.appendChild(loading);
+    
+    // 创建FormData对象
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    // 发送请求到导入API
+    const response = await fetch('/api/business?import=excel', {
+      method: 'POST',
+      body: formData,
+    });
+    
+    const result = await response.json();
+    
+    // 移除加载提示
+    document.body.removeChild(loading);
+    
+    // 显示导入结果
+    if (result.success) {
+      let message = result.message;
+      if (result.errorCount > 0) {
+        message += '\n\n错误详情：\n' + result.errors.join('\n');
+      }
+      alert(message);
+      
+      // 导入成功后刷新数据
+      if (result.successCount > 0) {
+        const data = await getBusinessData();
+        setBusinessList(data);
+      }
+    } else {
+      alert('导入失败：' + result.error + (result.details ? '\n' + result.details : ''));
+    }
+  } catch (error) {
+    console.error('导入Excel失败:', error);
+    alert('导入Excel失败，请稍后重试');
+  }
+};
+
+// 处理文件选择
+const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  
+  // 检查文件类型
+  if (!file.name.endsWith('.xlsx') && !file.name.endsWith('.xls')) {
+    alert('请选择.xlsx或.xls格式的Excel文件');
+    return;
+  }
+  
+  // 调用导入函数
+  importBusinessFromExcel(file);
+  
+  // 重置文件输入，允许重复选择同一个文件
+  event.target.value = '';
+};
  
 const MapInit = () => {
   const [businessList, setBusinessList] = useState<any[]>([]);
@@ -101,26 +173,59 @@ const MapInit = () => {
     <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
       <div id="mapContainer" style={{ width: '100%', height: '100%' }}></div>
       
-      {/* 导出按钮 - 固定在地图右上角 */}
-      <button 
-        onClick={exportBusinessToExcel}
-        style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          backgroundColor: '#1677ff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          padding: '8px 16px',
-          fontSize: '14px',
-          cursor: 'pointer',
-          zIndex: 1000,
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
-        }}
-      >
-        导出Excel
-      </button>
+      {/* 操作按钮区域 */}
+      <div style={{
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        zIndex: 1000
+      }}>
+        {/* 导出按钮 */}
+        <button 
+          onClick={exportBusinessToExcel}
+          style={{
+            backgroundColor: '#1677ff',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            padding: '8px 16px',
+            fontSize: '14px',
+            cursor: 'pointer',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+          }}
+        >
+          导出Excel
+        </button>
+        
+        {/* 导入按钮 - 使用label包裹input，实现美观的文件选择按钮 */}
+        <label
+          style={{
+            backgroundColor: '#52c41a',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            padding: '8px 16px',
+            fontSize: '14px',
+            cursor: 'pointer',
+            textAlign: 'center',
+            display: 'block',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)'
+          }}
+        >
+          导入Excel
+          <input
+            type="file"
+            accept=".xlsx,.xls"
+            onChange={handleFileSelect}
+            style={{
+              display: 'none'
+            }}
+          />
+        </label>
+      </div>
     </div>
   );
 };
