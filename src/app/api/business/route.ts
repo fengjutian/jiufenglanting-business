@@ -2,8 +2,8 @@ import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import * as XLSX from 'xlsx';
 import { Prisma } from '@prisma/client';
-import { writeFileSync, unlinkSync } from 'fs';
-import { randomUUID } from 'crypto';
+// import { writeFileSync, unlinkSync } from 'fs';
+// import { randomUUID } from 'crypto';
 
 interface BusinessData {
   name: string;
