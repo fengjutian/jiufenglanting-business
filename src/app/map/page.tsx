@@ -1,12 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, Fragment, useState } from "react";
-import { Button } from "@/components/ui/button";
-import styles from "./styles.module.css";
 import Dock from "@/components/Dock";
 import MapInit from "./mapInit";
-import FluidGlass from "./components/FluidGlass";
-import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { Config } from "./components/config";
 
@@ -49,19 +45,6 @@ const JiuFengMap: React.FC = () => {
 
 	return (
 		<div>
-			{/* <div style={{ height: '600px', position: 'relative' }}>
-        <FluidGlass 
-          mode="lens" // or "bar", "cube"
-          lensProps={{
-            scale: 0.25,
-            ior: 1.15,
-            thickness: 5,
-            chromaticAberration: 0.1,
-            anisotropy: 0.01  
-          }}
-        />
-      </div> */}
-
 			<MapInit />
 
 			<Dock
@@ -71,7 +54,7 @@ const JiuFengMap: React.FC = () => {
 				magnification={70}
 			/>
 
-			<Config isOpen={isOpen} />
+			<Config isOpen={isOpen} onClose={toggleDrawer} />
 		</div>
 	);
 };

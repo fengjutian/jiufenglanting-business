@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 type configType = {
 	isOpen: boolean;
+	onClose?: () => void;
 };
 
 const DrawerContent = styled.div`
@@ -14,21 +15,14 @@ const DrawerContent = styled.div`
 `;
 
 export const Config: React.FC<configType> = (props: configType) => {
-	const [isOpen, setIsOpen] = useState(props?.isOpen ?? false);
-
-	useEffect(() => {
-		console.log(123, props?.isOpen);
-		setIsOpen(props?.isOpen ?? false);
-	}, [props?.isOpen]);
-
 	const toggleDrawer = () => {
-		setIsOpen((prevState) => !prevState);
+		props.onClose?.();
 	};
 
 	return (
 		<div>
 			<Drawer
-				open={isOpen}
+				open={props.isOpen}
 				onClose={toggleDrawer}
 				direction="right"
 				className="bla bla bla"
