@@ -2,6 +2,7 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import styled from "styled-components";
 import { useConfigStore } from "@/store/useConfigStore";
+import { Box, RadioCards, Text, Flex } from "@radix-ui/themes";
 
 import { useState, useEffect } from "react";
 
@@ -33,13 +34,37 @@ export const Config: React.FC<configType> = (props: configType) => {
 			>
 				<DrawerContent>
 					<p>地图主题配置：</p>
-					<select>
+
+					<Box maxWidth="600px">
+						<RadioCards.Root defaultValue="1" columns={{ initial: "1", sm: "3" }}>
+							<RadioCards.Item value="1">
+								<Flex direction="column" width="100%">
+									<Text weight="bold">8-core CPU</Text>
+									<Text>32 GB RAM</Text>
+								</Flex>
+							</RadioCards.Item>
+							<RadioCards.Item value="2">
+								<Flex direction="column" width="100%">
+									<Text weight="bold">6-core CPU</Text>
+									<Text>24 GB RAM</Text>
+								</Flex>
+							</RadioCards.Item>
+							<RadioCards.Item value="3">
+								<Flex direction="column" width="100%">
+									<Text weight="bold">4-core CPU</Text>
+									<Text>16 GB RAM</Text>
+								</Flex>
+							</RadioCards.Item>
+						</RadioCards.Root>
+					</Box>
+
+	
 						{mapTheme.map((item: any) => (
-							<option key={item.label} value={item.theme}>
+							<label key={item.label} value={item.theme}>
 								{item.name}
-							</option>
+							</label>
 						))}
-					</select>
+					
 				</DrawerContent>
 			</Drawer>
 		</div>
