@@ -1,6 +1,7 @@
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import styled from "styled-components";
+import { useConfigStore } from "@/store/useConfigStore";
 
 import { useState, useEffect } from "react";
 
@@ -19,6 +20,8 @@ export const Config: React.FC<configType> = (props: configType) => {
 		props.onClose?.();
 	};
 
+	const mapTheme = useConfigStore((state: any) => state.mapTheme?.store);
+
 	return (
 		<div>
 			<Drawer
@@ -30,6 +33,13 @@ export const Config: React.FC<configType> = (props: configType) => {
 			>
 				<DrawerContent>
 					<p>地图主题配置：</p>
+					<select>
+						{mapTheme.map((item: any) => (
+							<option key={item.label} value={item.theme}>
+								{item.name}
+							</option>
+						))}
+					</select>
 				</DrawerContent>
 			</Drawer>
 		</div>

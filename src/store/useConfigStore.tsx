@@ -58,9 +58,9 @@ const mapThemeList = [
   }
 ]
 
-export const useStore = create((set) => ({
-  configAttr: {
-    mapTheme: mapThemeList,
+export const useConfigStore = create((set) => ({
+  mapTheme: {
+    store: mapThemeList,
     mapThemeByName: mapThemeList.reduce((acc, cur) => {
       acc[cur.label] = cur.theme
       return acc

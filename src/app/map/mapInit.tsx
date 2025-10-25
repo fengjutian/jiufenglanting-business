@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from "react";
 import AMapLoader from "@amap/amap-jsapi-loader";
 import { useStore } from "zustand";
+import { useConfigStore } from "@/store/useConfigStore";
 
 	const position = [118.881076, 31.960958];
 	const key = "5131350db8ad49230fd4c7f3cab4f1d8";
 
-
-
-
 const MapInit = () => {
 	const [businessList, setBusinessList] = useState<any[]>([]);
 
-	const mapTheme = useStore((state: any) => state.configAttr.mapTheme);
-	const mapThemeByName = useStore((state: any) => state.configAttr.mapThemeByName);
+	const mapTheme = useConfigStore((state: any) => state.mapTheme?.store);
+	const mapThemeByName = useConfigStore((state: any) => state.mapTheme?.mapThemeByName);
 
-	const mapStyleList = [
-		"amap://styles/normal",
-		"amap://styles/dark",
-		"amap://styles/light",
-		"amap://styles/whitesmoke",
-		"amap://styles/fresh",
-		"amap://styles/grey",
-		"amap://styles/graffiti",
-		"amap://styles/macaron",
-		"amap://styles/blue",
-		"amap://styles/darkblue",
-		"amap://styles/wine",
-	];
+	console.log(mapTheme);
+	console.log(mapThemeByName);
+
+	const mapStyleList = mapTheme.map((item: any) => item.theme);
 
 	const initializeMap = async (): Promise<void> => {
 		try {
