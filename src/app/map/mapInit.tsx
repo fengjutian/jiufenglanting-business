@@ -32,7 +32,10 @@ const MapInit = () => {
 				mapStyle: mapStyleList[0],
 			});
 
-			// 遍历业务数据，为每个业务点创建标记
+			// 优化标记添加逻辑，使用批量添加
+			const validMarkers: any[] = [];
+			const markerInfoWindows: any[] = [];
+			
 			businessData.forEach((business, index) => {
 				console.log(`业务数据 ${index}:`, business);
 				// 尝试多种可能的经纬度字段名
@@ -60,37 +63,56 @@ const MapInit = () => {
 				
 				console.log(`业务 ${index} 经纬度:`, longitude, latitude);
 				
-				// 检查经纬度是否有效
-				if (!isNaN(longitude) && !isNaN(latitude) && longitude !== null && latitude !== null) {
+				// 检查经纬度是否有效 - 高德地图使用 [longitude, latitude] 顺序
+				if (!isNaN(longitude) && !isNaN(latitude) && longitude !== null && latitude !== null && 
+				    longitude >= -180 && longitude <= 180 && latitude >= -90 && latitude <= 90) {
 					// 创建标记
 					const marker = new AMap.Marker({
-						position: [latitude, longitude],
+						position: [longitude, latitude], // 恢复正确的坐标顺序
 						title: business.name || `业务点 ${index}`, // 添加标题便于识别
 					});
-					amap.add(marker);
-					console.log(`已添加标记 ${index} 到地图`);
-
-						// 创建信息窗口
-						const infoWindow = new AMap.InfoWindow({
-							content: `
-								<div style="padding: 10px;">
-									<h3>${business.name || business.title || '未命名业务'}</h3>
-									<p>地址: ${business.address || business.location || '未知地址'}</p>
-									<p>电话: ${business.phone || business.tel || '未提供'}</p>
-									<p>类型: ${business.type || business.category || '未分类'}</p>
-								</div>
-							`,
-							offset: new AMap.Pixel(0, -30),
-						});
-
-						// 点击标记显示信息窗口
-						marker.on('click', () => {
-							infoWindow.open(amap, marker.getPosition());
-						});
+					
+					// 创建信息窗口
+					const infoWindow = new AMap.InfoWindow({
+						content: `
+							<div style="padding: 10px;">
+								<h3>${business.name || business.title || '未命名业务'}</h3>
+								<p>地址: ${business.address || business.location || '未知地址'}</p>
+								<p>电话: ${business.phone || business.tel || '未提供'}</p>
+								<p>类型: ${business.type || business.category || '未分类'}</p>
+							</div>
+						`,
+						offset: new AMap.Pixel(0, -30),
+					});
+					
+					// 保存标记和信息窗口以便后续处理
+					validMarkers.push(marker);
+					markerInfoWindows.push({ marker, infoWindow });
+					console.log(`已准备标记 ${index} - 坐标: [${longitude}, ${latitude}]`);
 				} else {
-					console.log(`业务缺少有效经纬度信息`);
+					console.log(`业务 ${index} 缺少有效经纬度信息`);
 				}
 			});
+			
+			// 批量添加标记到地图
+			if (validMarkers.length > 0) {
+				amap.add(validMarkers);
+				console.log(`成功批量添加 ${validMarkers.length} 个标记到地图`);
+				
+				// 为每个标记绑定点击事件
+				markerInfoWindows.forEach(({ marker, infoWindow }, index) => {
+					marker.on('click', () => {
+						try {
+							infoWindow.open(amap, marker.getPosition());
+							console.log(`打开标记 ${index} 的信息窗口`);
+						} catch (err) {
+							console.error(`打开信息窗口失败 ${index}:`, err);
+						}
+					});
+				});
+			} else {
+				console.log('没有有效的标记可以添加到地图');
+			}
 		} catch (error) {
 				console.error("地图初始化失败:", error);
 			} finally {
