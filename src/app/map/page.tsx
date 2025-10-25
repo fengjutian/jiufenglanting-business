@@ -20,6 +20,7 @@ const JiuFengMap: React.FC = () => {
 
 	const [isOpen, setIsOpen] = React.useState(false);
 	const toggleDrawer = () => {
+		console.log(11123, isOpen);
 		setIsOpen((prevState) => !prevState);
 	};
 
