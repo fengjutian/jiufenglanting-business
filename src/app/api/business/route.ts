@@ -389,7 +389,7 @@ export async function PUT(request: Request) {
 		}
 
 		// 准备更新数据，排除 id 字段
-		const updateData: Partial<BusinessData> = { ...data };
+		const updateData: any = { ...data };
 		delete updateData.id;
 
 		// 更新业务
