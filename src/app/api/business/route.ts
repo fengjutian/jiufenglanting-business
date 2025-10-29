@@ -1,7 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import * as XLSX from "xlsx";
-import { Prisma } from "@prisma/client";
+// Prisma v6 中不需要直接导入 Prisma 类型
+
 // import { writeFileSync, unlinkSync } from 'fs';
 // import { randomUUID } from 'crypto';
 
@@ -230,7 +231,7 @@ export async function POST(request: Request) {
 						}
 
 						// 创建业务数据
-						const businessData: Prisma.BusinessCreateInput = {
+						const businessData = {
 							name: String(rowData.name),
 							email: String(rowData.email),
 							address: String(rowData.address),
