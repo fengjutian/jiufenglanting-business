@@ -217,13 +217,16 @@ export async function POST(request: Request) {
 					const rowData = jsonData[i];
 
 					try {
+						// 将rowData转换为any类型以避免TypeScript错误
+						const data = rowData as any;
+						
 						// 验证必填字段
 						if (
-							!rowData.name ||
-							!rowData.email ||
-							!rowData.address ||
-							!rowData.type ||
-							!rowData.contact
+							!data.name ||
+							!data.email ||
+							!data.address ||
+							!data.type ||
+							!data.contact
 						) {
 							errorCount++;
 							errors.push(`第${i + 2}行: 缺少必填字段`);
@@ -232,15 +235,15 @@ export async function POST(request: Request) {
 
 						// 创建业务数据
 						const businessData = {
-							name: String(rowData.name),
-							email: String(rowData.email),
-							address: String(rowData.address),
-							type: String(rowData.type),
-							contact: String(rowData.contact),
-							rating: rowData.rating ? Number(rowData.rating) : null,
-							latitude: rowData.latitude ? Number(rowData.latitude) : null,
-							longitude: rowData.longitude ? Number(rowData.longitude) : null,
-							otherInfo: rowData.otherInfo ? String(rowData.otherInfo) : null,
+							name: String(data.name),
+							email: String(data.email),
+							address: String(data.address),
+							type: String(data.type),
+							contact: String(data.contact),
+							rating: data.rating ? Number(data.rating) : null,
+							latitude: data.latitude ? Number(data.latitude) : null,
+							longitude: data.longitude ? Number(data.longitude) : null,
+							otherInfo: data.otherInfo ? String(data.otherInfo) : null,
 						};
 
 						// 尝试创建业务
