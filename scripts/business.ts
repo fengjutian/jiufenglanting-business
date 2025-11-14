@@ -66,7 +66,7 @@ export const raw: BusinessSeedEntry[] = [
     id: 5,
     name: '上访天云门诊',
     email: '',
-    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
+    address: '南京市江宁区东山街道瑞宁路32-7号',
     type: typeList.小诊所,
     contact: '',
     rating: null,
