@@ -1,14 +1,16 @@
-export enum typeList {
-  超市 = '1',
-  餐饮 = '2',
-  小诊所 = '3',
-  医院 = '4',
-  水果店 = '5',
-  麦当劳 = '6',
-  菜市场 = '7',
-  炒货 = '8',
-  早餐 = '9',
-  糕点 = '10',
-  烧烤 = '11',
-  肯德基 = '12',
-}
+export const typeList = {
+  超市: 'supermarket',
+  餐饮: 'food',
+  小诊所: 'clinic',
+  医院: 'hospital',
+  水果店: 'fruit',
+  麦当劳: 'mcdonalds',
+  菜市场: 'market',
+  炒货: 'roasted',
+  早餐: 'breakfast',
+  糕点: 'bakery',
+  烧烤: 'bbq',
+  肯德基: 'kfc',
+} as const
+
+export type typeList = typeof typeList[keyof typeof typeList]

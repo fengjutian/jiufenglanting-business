@@ -1,5 +1,4 @@
-import type { Prisma } from '@prisma/client'
-const { PrismaClient } = require('@prisma/client')
+import { PrismaClient, type Prisma } from '@prisma/client'
 const prisma = new PrismaClient()
 
 type RawEntry = {
@@ -15,7 +14,7 @@ type RawEntry = {
   otherInfo?: string | null
 }
 
-const { raw }: { raw: RawEntry[] } = require('./business.ts')
+import { raw } from './business.ts'
 
 async function run(): Promise<void> {
   try {

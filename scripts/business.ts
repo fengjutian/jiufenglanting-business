@@ -1,4 +1,4 @@
-import { typeList } from '../type/businessType'
+import { typeList } from '../type/businessType.ts'
 
 export type BusinessSeedEntry = {
   id?: number

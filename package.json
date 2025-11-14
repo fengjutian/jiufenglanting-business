@@ -2,11 +2,12 @@
   "name": "jiufenglanting-business",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "seed:business": "node scripts/seed-business.ts"
+    "seed:business": "node --experimental-strip-types scripts/seed-business.ts"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
