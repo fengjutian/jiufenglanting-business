@@ -2,17 +2,15 @@
 
 import React, { useEffect, useRef, Fragment, useState } from "react";
 import Dock from "@/components/Dock";
-import MapInit from "./mapInit";
+import dynamic from "next/dynamic";
+const MapInit = dynamic(() => import("./mapInit"), { ssr: false });
 import "react-modern-drawer/dist/index.css";
-import { Config } from "./components/config";
+const Config = dynamic(() => import("./components/config").then(m => m.Config), { ssr: false });
 
 const JiuFengMap: React.FC = () => {
 	const [data, setData] = useState();
 
-	// 确保在客户端环境中渲染地图组件
-	if (typeof window === "undefined") {
-		return;
-	}
+    
 
 	const [isOpen, setIsOpen] = React.useState(false);
 	const toggleDrawer = () => {
@@ -60,10 +58,7 @@ const JiuFengMap: React.FC = () => {
 };
 
 const Position = () => {
-	// 确保在客户端环境中渲染 APILoader
-	if (typeof window === "undefined") {
-		return;
-	}
+    
 
 	return <JiuFengMap />;
 };

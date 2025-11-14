@@ -1,5 +1,5 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import AMapLoader from "@amap/amap-jsapi-loader";
 import { useStore } from "zustand";
 import { useConfigStore } from "@/store/useConfigStore";
 
@@ -18,12 +18,13 @@ const MapInit = () => {
 	const mapStyleList = mapTheme.map((item: any) => item.theme);
 
 	const initializeMap = async (businessData: any[] = []): Promise<void> => {
-		try {
-			const AMap = await AMapLoader.load({
-				key: key, // 申请好的Web端开发者Key
-				version: "2.0", // 指定要加载的 JSAPI 的版本
-				plugins: [], //插件列表
-			});
+    try {
+            const { default: AMapLoader } = await import("@amap/amap-jsapi-loader");
+            const AMap = await AMapLoader.load({
+                key: key, // 申请好的Web端开发者Key
+                version: "2.0", // 指定要加载的 JSAPI 的版本
+                plugins: [], //插件列表
+            });
 
 			// 创建地图实例
 			const amap = new AMap.Map("mapContainer", {
