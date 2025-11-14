@@ -5,7 +5,11 @@ const globalForPrisma = global as unknown as {
 	prisma: PrismaClient | undefined;
 };
 
-export const prisma = globalForPrisma.prisma || new PrismaClient();
+const sqliteUrl = (process.env.DATABASE_URL && process.env.DATABASE_URL.trim() !== "")
+  ? process.env.DATABASE_URL
+  : (process.env.NETLIFY ? "file:/tmp/dev.db" : "file:./dev.db");
+
+export const prisma = globalForPrisma.prisma || new PrismaClient({ datasources: { db: { url: sqliteUrl } } });
 
 if (process.env.NODE_ENV !== "production") {
 	globalForPrisma.prisma = prisma;
