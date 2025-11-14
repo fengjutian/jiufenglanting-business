@@ -12,6 +12,8 @@ type RawEntry = {
   latitude?: number | null
   longitude?: number | null
   otherInfo?: string | null
+  imageBase64?: string | null
+  description?: string | null
 }
 
 import { raw } from './business.ts'
@@ -27,7 +29,9 @@ async function run(): Promise<void> {
       rating: b.rating,
       latitude: b.latitude,
       longitude: b.longitude,
-      otherInfo: b.otherInfo
+      otherInfo: b.otherInfo,
+      imageBase64: b.imageBase64,
+      description: b.description
     }))
 
     const existing: { name: string; address: string }[] = await prisma.business.findMany({ select: { name: true, address: true } })

@@ -56,8 +56,6 @@ const JiuFengMap: React.FC = () => {
 };
 
 const Position = () => {
-    
-
 	return <JiuFengMap />;
 };
 

@@ -22,15 +22,17 @@ model User {
 
 model Business {
   id          Int     @id @default(autoincrement())
-  name        String
-  email       String
-  address     String  // 地址字段
-  type        String  // 类型字段
-  contact     String  // 通讯方式字段
-  rating      Float?  // 评价字段，使用 Float 类型并允许为 null
-  latitude    Float?  // 纬度字段，使用 Float 类型并允许为 null
-  longitude   Float?  // 经度字段，使用 Float 类型并允许为 null
-  otherInfo   String? // 其他信息字段，允许为 null
+  name        String   // 业务名称
+  email       String   // 联系方式或标识
+  address     String   // 地址
+  type        String   // 类型
+  contact     String   // 通讯方式
+  rating      Float? @default(0.0) // 评价（0~5）
+  latitude    Float?   // 纬度
+  longitude   Float?   // 经度
+  otherInfo   String?  // 其他信息
+  imageBase64 String?  // 图片（Base64）
+  description String?  // 描述/简介
 }
 
 

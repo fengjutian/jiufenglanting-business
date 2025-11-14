@@ -1,6 +1,6 @@
-import JiuFengMap from "./map/page";
+import Position from "./map/page";
 export default function Home() {
 	return (
-    <JiuFengMap />
+    <Position />
 	);
 }

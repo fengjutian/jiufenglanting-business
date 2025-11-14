@@ -11,6 +11,8 @@ export type BusinessSeedEntry = {
   latitude?: number | null
   longitude?: number | null
   otherInfo?: string | null
+  imageBase64?: string | null
+  description?: string | null
 }
 
 export const raw: BusinessSeedEntry[] = [
@@ -24,7 +26,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.96211,
     longitude: 118.881618,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 2,
@@ -36,7 +40,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.967829,
     longitude: 118.877457,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 3,
@@ -48,7 +54,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.967994,
     longitude: 118.877369,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 4,
@@ -60,7 +68,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.967915,
     longitude: 118.877252,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 5,
@@ -72,7 +82,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.962192,
     longitude: 118.880968,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 6,
@@ -84,7 +96,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.968904,
     longitude: 118.876375,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 7,
@@ -96,7 +110,9 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.9689,
     longitude: 118.876378,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   },
   {
     id: 8,
@@ -108,6 +124,8 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.960703,
     longitude: 118.888914,
-    otherInfo: null
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]
