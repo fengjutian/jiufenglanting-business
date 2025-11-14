@@ -87,6 +87,39 @@ async function main() {
       ]
     })
   }
+
+  const businessCount = await prisma.business.count()
+  if (businessCount === 0) {
+    await prisma.business.createMany({
+      data: [
+        {
+          "id": 1,
+          "name": "联品优选(玖峰兰庭店)",
+          "email": "1",
+          "address": "南京市江宁区瑞宁路与万安南路交叉口东100米",
+          "type": "1",
+          "contact": "1",
+          "rating": null,
+          "latitude": 31.96211,
+          "longitude": 118.881618,
+          "otherInfo": null
+        },
+       {
+          "id": 2,
+          "name": "购好生活超市(祈泽佳苑店)",
+          "email": "",
+          "address": "南京市江宁区东山街道祈泽佳苑9幢一楼102-105室",
+          "type": "",
+          "contact": "",
+          "rating": null,
+          "latitude": 31.967829,
+          "longitude": 118.877457,
+          "otherInfo": null
+        }
+      ],
+      skipDuplicates: true
+    })
+  }
 }
 
 main()
