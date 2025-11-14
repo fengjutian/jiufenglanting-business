@@ -17,6 +17,8 @@
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@babel/runtime": "^7.28.4",
     "@biomejs/biome": "^2.2.7",
+    "@libsql/client": "^0.15.15",
+    "@prisma/adapter-libsql": "^6.19.0",
     "@prisma/client": "^6.17.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.3",
