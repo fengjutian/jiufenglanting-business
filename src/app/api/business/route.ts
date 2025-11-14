@@ -1,7 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import * as XLSX from "xlsx";
-export const runtime = 'edge'
 // Prisma v6 中不需要直接导入 Prisma 类型
 
 // import { writeFileSync, unlinkSync } from 'fs';

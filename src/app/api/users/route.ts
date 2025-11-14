@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma"; // 假设您有一个导出prisma客户端的文件
-export const runtime = 'edge'
 
 export async function GET() {
 	try {
