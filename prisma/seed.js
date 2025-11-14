@@ -115,6 +115,18 @@ async function main() {
           "latitude": 31.967829,
           "longitude": 118.877457,
           "otherInfo": null
+        },
+        {
+          "id": 3,
+          "name": "购好生活超市(祈泽佳苑店)",
+          "email": "",
+          "address": "南京市江宁区东山街道祈泽佳苑9幢一楼102-105室",
+          "type": "",
+          "contact": "",
+          "rating": null,
+          "latitude": 31.067829,
+          "longitude": 118.977457,
+          "otherInfo": null
         }
       ],
       skipDuplicates: true
