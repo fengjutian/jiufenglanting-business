@@ -1,7 +1,5 @@
-// import type { Prisma } from '@prisma/client'
-import pkg from '@prisma/client'
-const prisma = new pkg.PrismaClient()
-
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
 import { raw } from './business.ts'
 
 async function run(): Promise<void> {
