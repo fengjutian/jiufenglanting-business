@@ -7,7 +7,7 @@ const globalForPrisma = global as unknown as {
 
 const sqliteUrl = (process.env.DATABASE_URL && process.env.DATABASE_URL.trim() !== "")
   ? process.env.DATABASE_URL
-  : (process.env.NETLIFY ? "file:/tmp/dev.db" : "file:./dev.db");
+  : (process.env.NETLIFY ? "file:dev?mode=memory&cache=shared" : "file:./dev.db");
 
 export const prisma = globalForPrisma.prisma || new PrismaClient({ datasources: { db: { url: sqliteUrl } } });
 
