@@ -1,5 +1,5 @@
-import { PrismaClient, type Prisma } from '@prisma/client'
-const prisma = new PrismaClient()
+import pkg, { Prisma } from '@prisma/client'
+const prisma = new pkg.PrismaClient()
 
 type RawEntry = {
   id?: number
