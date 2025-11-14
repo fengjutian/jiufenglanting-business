@@ -33,3 +33,26 @@ model Business {
   otherInfo   String? // 其他信息字段，允许为 null
 }
 
+
+model Shop {
+  id          Int      @id @default(autoincrement())
+  name        String
+  owner       String
+  phone       String?
+  address     String?
+  status      Int      @default(1)
+  imageBase64 String?  @map("image_base64")
+  rating      Float?   @default(0.0)
+  review      String?
+  latitude    Float?
+  longitude   Float?
+  shopType    String?  @map("shop_type")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  description String?
+
+  @@map("shops")
+}
+
+
+
