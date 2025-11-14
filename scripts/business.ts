@@ -1,12 +1,25 @@
+import { typeList } from '../type/businessType'
 
+export type BusinessSeedEntry = {
+  id?: number
+  name: string
+  email: string
+  address?: string
+  type?: typeList
+  contact?: string
+  rating?: number | null
+  latitude?: number | null
+  longitude?: number | null
+  otherInfo?: string | null
+}
 
-export const raw = [
+export const raw: BusinessSeedEntry[] = [
   {
     id: 1,
     name: '联品优选(玖峰兰庭店)',
     email: '1',
     address: '南京市江宁区瑞宁路与万安南路交叉口东100米',
-    type: '1',
+    type: typeList.超市,
     contact: '1',
     rating: null,
     latitude: 31.96211,
@@ -18,7 +31,7 @@ export const raw = [
     name: '购好生活超市(祈泽佳苑店)',
     email: '',
     address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: '',
+    type: typeList.超市,
     contact: '',
     rating: null,
     latitude: 31.967829,
@@ -30,7 +43,7 @@ export const raw = [
     name: '老街大排档',
     email: '',
     address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: '',
+    type: typeList.餐饮,
     contact: '',
     rating: null,
     latitude: 31.967994,
@@ -42,23 +55,35 @@ export const raw = [
     name: '川福楼私房菜',
     email: '',
     address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: '',
+    type: typeList.餐饮,
     contact: '',
     rating: null,
     latitude: 31.967915,
     longitude: 118.877252,
     otherInfo: null
   },
-{
+  {
     id: 5,
     name: '上访天云门诊',
     email: '',
     address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: '',
+    type: typeList.小诊所,
     contact: '',
     rating: null,
     latitude: 31.962192,
     longitude: 118.880968,
+    otherInfo: null
+  },
+  {
+    id: 6,
+    name: '上访天云门诊',
+    email: '',
+    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
+    type: typeList.小诊所,
+    contact: '',
+    rating: null,
+    latitude: 31.9689,
+    longitude: 118.876378,
     otherInfo: null
   }
 ]
