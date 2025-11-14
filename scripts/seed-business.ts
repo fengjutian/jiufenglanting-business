@@ -1,4 +1,4 @@
-import type { Prisma } from '@prisma/client'
+// import type { Prisma } from '@prisma/client'
 import pkg from '@prisma/client'
 const prisma = new pkg.PrismaClient()
 
@@ -6,7 +6,7 @@ import { raw } from './business.ts'
 
 async function run(): Promise<void> {
   try {
-    const normalized: Prisma.BusinessCreateManyInput[] = raw.map((b, i) => ({
+    const normalized: any[] = raw.map((b, i) => ({
       name: b.name,
       email: (b.email && b.email.trim() !== '') ? `seed+${b.email}@example.com` : `seed-${i + 1}@example.com`,
       address: b.address || '',
@@ -22,7 +22,7 @@ async function run(): Promise<void> {
 
     const existing: { name: string; address: string }[] = await prisma.business.findMany({ select: { name: true, address: true } })
     const existingKeys = new Set(existing.map((b) => `${b.name}|${b.address}`))
-    const toInsert: Prisma.BusinessCreateManyInput[] = normalized.filter((b) => !existingKeys.has(`${b.name}|${b.address}`))
+    const toInsert: any[] = normalized.filter((b) => !existingKeys.has(`${b.name}|${b.address}`))
 
     if (toInsert.length > 0) {
       await prisma.business.createMany({ data: toInsert })
