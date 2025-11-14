@@ -1,0 +1,64 @@
+
+
+export const raw = [
+  {
+    id: 1,
+    name: '联品优选(玖峰兰庭店)',
+    email: '1',
+    address: '南京市江宁区瑞宁路与万安南路交叉口东100米',
+    type: '1',
+    contact: '1',
+    rating: null,
+    latitude: 31.96211,
+    longitude: 118.881618,
+    otherInfo: null
+  },
+  {
+    id: 2,
+    name: '购好生活超市(祈泽佳苑店)',
+    email: '',
+    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
+    type: '',
+    contact: '',
+    rating: null,
+    latitude: 31.967829,
+    longitude: 118.877457,
+    otherInfo: null
+  },
+  {
+    id: 3,
+    name: '老街大排档',
+    email: '',
+    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
+    type: '',
+    contact: '',
+    rating: null,
+    latitude: 31.967994,
+    longitude: 118.877369,
+    otherInfo: null
+  },
+  {
+    id: 4,
+    name: '川福楼私房菜',
+    email: '',
+    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
+    type: '',
+    contact: '',
+    rating: null,
+    latitude: 31.967915,
+    longitude: 118.877252,
+    otherInfo: null
+  },
+{
+    id: 5,
+    name: '上访天云门诊',
+    email: '',
+    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
+    type: '',
+    contact: '',
+    rating: null,
+    latitude: 31.962192,
+    longitude: 118.880968,
+    otherInfo: null
+  }
+]
