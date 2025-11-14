@@ -1,6 +1,7 @@
 import * as XLSX from "xlsx";
 import path from "path";
 import fs from "fs";
+export const runtime = 'edge'
 
 // 定义API处理函数，用于处理来自客户端的请求（Next.js 13+ Route Handler）
 export async function GET() {
