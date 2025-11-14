@@ -10,8 +10,6 @@ const Config = dynamic(() => import("./components/config").then(m => m.Config), 
 const JiuFengMap: React.FC = () => {
 	const [data, setData] = useState();
 
-    
-
 	const [isOpen, setIsOpen] = React.useState(false);
 	const toggleDrawer = () => {
 		console.log(11123, isOpen);
