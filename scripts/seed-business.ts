@@ -1,20 +1,6 @@
-import pkg, { Prisma } from '@prisma/client'
+import type { Prisma } from '@prisma/client'
+import pkg from '@prisma/client'
 const prisma = new pkg.PrismaClient()
-
-type RawEntry = {
-  id?: number
-  name: string
-  email: string
-  address?: string
-  type?: string
-  contact?: string
-  rating?: number | null
-  latitude?: number | null
-  longitude?: number | null
-  otherInfo?: string | null
-  imageBase64?: string | null
-  description?: string | null
-}
 
 import { raw } from './business.ts'
 
