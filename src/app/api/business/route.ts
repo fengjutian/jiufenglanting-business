@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { prisma, ensureSqliteSchema } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import * as XLSX from "xlsx";
 // Prisma v6 中不需要直接导入 Prisma 类型
@@ -20,6 +20,7 @@ interface BusinessData {
 
 export async function GET(request: Request) {
 	try {
+		await ensureSqliteSchema();
 		const url = new URL(request.url);
 		const idParam = url.searchParams.get("id");
 		const exportParam = url.searchParams.get("export");

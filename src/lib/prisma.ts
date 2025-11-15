@@ -14,3 +14,31 @@ export const prisma = globalForPrisma.prisma || new PrismaClient({ datasources: 
 if (process.env.NODE_ENV !== "production") {
 	globalForPrisma.prisma = prisma;
 }
+
+export async function ensureSqliteSchema(): Promise<void> {
+  const createUser = `
+    CREATE TABLE IF NOT EXISTS User (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE
+    );
+  `;
+  const createBusiness = `
+    CREATE TABLE IF NOT EXISTS Business (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      address TEXT NOT NULL,
+      type TEXT NOT NULL,
+      contact TEXT NOT NULL,
+      rating REAL,
+      latitude REAL,
+      longitude REAL,
+      otherInfo TEXT,
+      imageBase64 TEXT,
+      description TEXT
+    );
+  `;
+  await prisma.$executeRawUnsafe(createUser);
+  await prisma.$executeRawUnsafe(createBusiness);
+}

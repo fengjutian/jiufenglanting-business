@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma"; // 假设您有一个导出prisma客户端的文件
+import { prisma, ensureSqliteSchema } from "@/lib/prisma";
 
 export async function GET() {
 	try {
+		await ensureSqliteSchema();
 		const users = await prisma.user.findMany();
 		return NextResponse.json(users, { status: 200 });
 	} catch (error) {
@@ -16,6 +17,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
 	try {
+		await ensureSqliteSchema();
 		const { name, email } = await request.json();
 
 		// 验证输入
