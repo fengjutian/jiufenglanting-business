@@ -33,6 +33,7 @@ export const typeList = {
   口腔: 'oral',
   金店: 'gold_store',
   电动车: 'electric_car',
+  烤鸭: 'duck',
 } as const
 
 export type typeList = typeof typeList[keyof typeof typeList]
@@ -72,4 +73,5 @@ export const typeColorMap: Record<string, string> = {
   oral: '#48dbfb',
   gold_store: '#ffd700',
   electric_car: '#2e86de',
+  duck: '#a0522d',
 };
