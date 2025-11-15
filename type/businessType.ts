@@ -39,6 +39,11 @@ export const typeList = {
   中餐: 'chinese',
   西餐: 'western',
   燃气: 'gas',
+  零食: 'snacks',
+  教育: 'education',
+  瑜伽: 'yoga',
+  健身房: 'gym',
+  便利店: 'convenience_store',
 } as const
 
 export type typeList = typeof typeList[keyof typeof typeList]
@@ -84,4 +89,9 @@ export const typeColorMap: Record<string, string> = {
   chinese: '#ff4d4f',
   western: '#6c5ce7',
   gas: '#ff9f43',
+  snacks: '#fdcb6e',
+  education: '#74b9ff',
+  yoga: '#a29bfe',
+  gym: '#00d2d3',
+  convenience_store: '#1dd1a1',
 };

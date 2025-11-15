@@ -1,7 +1,10 @@
 import { typeList } from '../type/businessType.ts'
+import { supermarketList } from './supermarket.ts'
+import { pharmacySeedEntries } from './pharmacy.ts'
+import { fruitSeedEntries } from './fruit.ts'
 
 export type BusinessSeedEntry = {
-  id?: number
+  id?: string | number
   name: string
   email: string
   address?: string
@@ -16,34 +19,6 @@ export type BusinessSeedEntry = {
 }
 
 export const raw: BusinessSeedEntry[] = [
-  {
-    id: 1,
-    name: '联品优选(玖峰兰庭店)',
-    email: '1',
-    address: '南京市江宁区瑞宁路与万安南路交叉口东100米',
-    type: typeList.超市,
-    contact: '1',
-    rating: null,
-    latitude: 31.96211,
-    longitude: 118.881618,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 2,
-    name: '购好生活超市(祈泽佳苑店)',
-    email: '',
-    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: typeList.超市,
-    contact: '',
-    rating: null,
-    latitude: 31.967829,
-    longitude: 118.877457,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
   {
     id: 3,
     name: '老街大排档',
@@ -91,25 +66,11 @@ export const raw: BusinessSeedEntry[] = [
     name: '肯德基(南京上坊店)',
     email: '',
     address: '南京市江宁区东山街道文靖东路333号1幢104室一层',
-    type: typeList.小诊所,
+    type: typeList.肯德基,
     contact: '',
     rating: null,
     latitude: 31.968904,
     longitude: 118.876375,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 7,
-    name: '上访天云门诊',
-    email: '',
-    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: typeList.肯德基,
-    contact: '',
-    rating: null,
-    latitude: 31.9689,
-    longitude: 118.876378,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -199,20 +160,6 @@ export const raw: BusinessSeedEntry[] = [
     description: null
   },
   {
-    id: 14,
-    name: '华润苏果',
-    email: '',
-    address: '',
-    type: typeList.超市,
-    contact: '',
-    rating: null,
-    latitude: 31.95837,
-    longitude: 118.864491,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
     id: 15,
     name: '一个卷饼',
     email: '',
@@ -264,20 +211,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.954479,
     longitude: 118.847828,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 19,
-    name: '苏果生活超市(天元吉第城店)',
-    email: '',
-    address: '南京市江宁区湖山路369号天元吉第城商业12幢102-104号',
-    type: typeList.超市,
-    contact: '025-51839771 18795980586',
-    rating: null,
-    latitude: 31.949694,
-    longitude: 118.875626,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -379,5 +312,218 @@ export const raw: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
-  }
+  },
+  {
+    id: 27,
+    name: '彭城老拾烧烤(湖山路直营店)',
+    email: '',
+    address: '南京市江宁区湖山路360-1号',
+    type: typeList.烧烤,
+    contact: '15261877770',
+    rating: null,
+    latitude: 31.946339,
+    longitude: 118.869195,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 28,
+    name: '地锅传奇(湖山路店)',
+    email: '',
+    address: '南京市江宁区湖山路370号,天元吉第城西门斜对面',
+    type: typeList.餐饮,
+    contact: '18512559909 18662521878',
+    rating: null,
+    latitude: 31.945764,
+    longitude: 118.86932,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 29,
+    name: '乐喜面馆(天元吉第城店)',
+    email: '',
+    address: '南京市江宁区天元吉第城39幢103室',
+    type: typeList.面馆,
+    contact: '13585111192',
+    rating: null,
+    latitude: 31.945231,
+    longitude: 118.871311,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 30,
+    name: '思本轩水煎包(天元吉第城店)',
+    email: '',
+    address: '南京市江宁区湖山路369号天元吉第城商业9幢105-1室',
+    type: typeList.早餐,
+    contact: '15951721225',
+    rating: null,
+    latitude: 31.947699,
+    longitude: 118.87508,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 31,
+    name: '诚伟菜馆(天元吉第城店)',
+    email: '',
+    address: '南京市江宁区天元吉第商业9幢101室',
+    type: typeList.中餐,
+    contact: '',
+    rating: null,
+    latitude: 31.947907,
+    longitude: 118.875035,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 32,
+    name: '戴欣川菜(湖山路店)',
+    email: '',
+    address: '南京市江宁区湖山路天元吉第城商铺8栋102室戴欣川菜',
+    type: typeList.中餐,
+    contact: '18012971288',
+    rating: null,
+    latitude: 31.949764,
+    longitude: 118.875545,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 33,
+    name: '百姓人家家常菜馆(湖东路)',
+    email: '',
+    address: '南京市江宁区科学园湖山路369号天元吉地城北门8-107',
+    type: typeList.中餐,
+    contact: '13815447974 15261467477',
+    rating: null,
+    latitude: 31.949906,
+    longitude: 118.875115,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 34,
+    name: '吴府记乡味地锅',
+    email: '',
+    address: '南京市江宁区淳化街道湖东路天元吉第城北门7栋103',
+    type: typeList.中餐,
+    contact: '13851468093 18795958536',
+    rating: null,
+    latitude: 31.950062,
+    longitude: 118.87448,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  ...supermarketList,
+  {
+    id: '35',
+    name: '四个朋友·自助棋牌(江宁金茂悦店)',
+    email: '',
+    address: '南京市江宁区东山街道瑞宁路186号101-1室2F-S-05铺',
+    type: typeList.棋牌,
+    contact: '18705155632 4000017788',
+    rating: null,
+    latitude: 31.960674,
+    longitude: 118.888723,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: '36',
+    name: '好想来零食乐园(南京江宁区金茂悦店)',
+    email: '',
+    address: '南京市江宁区东山街道瑞宁路192号龙茂嘉苑小区101室',
+    type: typeList.零食,
+    contact: '4000107777',
+    rating: null,
+    latitude: 31.960469,
+    longitude: 118.890096,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: '37',
+    name: '正心堂大药房',
+    email: '',
+    address: '南京市江宁区江宁区东山街道上坊社区嘉茂路向东60米',
+    type: typeList.药店,
+    contact: '025-87731990',
+    rating: null,
+    latitude: 31.960401,
+    longitude: 118.890454,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: '38',
+    name: '瑾晨·瑜伽普拉提生活馆',
+    email: '',
+    address: '南京市江宁区武成路66号3楼302室',
+    type: typeList.瑜伽,
+    contact: '18013871880',
+    rating: null,
+    latitude: 31.961452,
+    longitude: 118.889871,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: '39',
+    name: '徐州烧烤龙虾碳锅大排档',
+    email: '',
+    address: '南京市江宁区武成路68号111-2室',
+    type: typeList.烧烤,
+    contact: '',
+    rating: null,
+    latitude: 31.960989,
+    longitude: 118.89065,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: '40',
+    name: '紫燕百味鸡(江宁龙昌路店)',
+    email: '',
+    address: '南京市江宁区东山街道龙昌路7号云靖花园18栋101室',
+    type: typeList.餐饮,
+    contact: '13851609099',
+    rating: null,
+    latitude: 31.964836,
+    longitude: 118.879622,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: '41',
+    name: '香呱呱炒货(都会学府店)',
+    email: '',
+    address: '南京市江宁区江宁云靖花园',
+    type: typeList.炒货,
+    contact: '18762232768',
+    rating: null,
+    latitude: 31.964978,
+    longitude: 118.879426,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  ...pharmacySeedEntries,
+  ...fruitSeedEntries,
 ]
