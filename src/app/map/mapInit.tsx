@@ -3,12 +3,16 @@ import React, { useEffect, useState } from "react";
 import { raw as businessRaw } from "../../../scripts/business.ts";
 import { useConfigStore } from "@/store/useConfigStore";
 import { typeColorMap } from "@/../type/businessType";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
 
 	const position = [118.881076, 31.960958];
 	const key = "5131350db8ad49230fd4c7f3cab4f1d8";
 
 const MapInit = () => {
-	const [businessList, setBusinessList] = useState<any[]>([]);
+    const [businessList, setBusinessList] = useState<any[]>([]);
+    const [detailOpen, setDetailOpen] = useState(false);
+    const [selected, setSelected] = useState<any | null>(null);
 
 	const mapTheme = useConfigStore((state: any) => state.mapTheme?.store);
 	const mapThemeByName = useConfigStore((state: any) => state.mapTheme?.mapThemeByName);
@@ -35,8 +39,8 @@ const MapInit = () => {
 			});
 
 			// 优化标记添加逻辑，使用批量添加
-			const validMarkers: any[] = [];
-			const markerInfoWindows: any[] = [];
+      const validMarkers: any[] = [];
+      const markerMeta: any[] = [];
 
 			businessData.forEach((business, index) => {
 				console.log(`业务数据 ${index}:`, business);
@@ -76,22 +80,9 @@ const MapInit = () => {
 						offset: new AMap.Pixel(-10, -10)
 					});
 					
-					// 创建信息窗口
-					const infoWindow = new AMap.InfoWindow({
-						content: `
-							<div style="padding: 10px;">
-								<h3>${business.name || business.title || '未命名业务'}</h3>
-								<p>地址: ${business.address || business.location || '未知地址'}</p>
-								<p>电话: ${business.phone || business.tel || '未提供'}</p>
-								<p>类型: ${business.type || business.category || '未分类'}</p>
-							</div>
-						`,
-						offset: new AMap.Pixel(0, -30),
-					});
-					
-					// 保存标记和信息窗口以便后续处理
-					validMarkers.push(marker);
-					markerInfoWindows.push({ marker, infoWindow });
+          // 保存标记和信息窗口以便后续处理
+          validMarkers.push(marker);
+          markerMeta.push({ marker, business });
 					console.log(`已准备标记 ${index} - 坐标: [${longitude}, ${latitude}]`);
 				} else {
 					console.log(`业务 ${index} 缺少有效经纬度信息`);
@@ -103,17 +94,12 @@ const MapInit = () => {
 				amap.add(validMarkers);
 				console.log(`成功批量添加 ${validMarkers.length} 个标记到地图`);
 				
-				// 为每个标记绑定点击事件
-				markerInfoWindows.forEach(({ marker, infoWindow }, index) => {
-					marker.on('click', () => {
-						try {
-							infoWindow.open(amap, marker.getPosition());
-							console.log(`打开标记 ${index} 的信息窗口`);
-						} catch (err) {
-							console.error(`打开信息窗口失败 ${index}:`, err);
-						}
-					});
-				});
+        markerMeta.forEach(({ marker, business }, index) => {
+          marker.on('click', () => {
+            setSelected(business);
+            setDetailOpen(true);
+          });
+        });
 			} else {
 				console.log('没有有效的标记可以添加到地图');
 			}
@@ -254,7 +240,6 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 		loadData();
 	}, []);
 
-	// 当业务数据变化时重新渲染地图标记
 	useEffect(() => {
 		if (businessList.length > 0) {
 			initializeMap(businessList);
@@ -317,8 +302,24 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 						}}
 					/>
 				</label> */}
-			</div>
-		</div>
+        </div>
+          <Drawer
+              open={detailOpen}
+              onClose={() => setDetailOpen(false)}
+              direction="right"
+              size="420px"
+          >
+              <div style={{ padding: 16 }}>
+                  <div style={{ fontSize: 18, fontWeight: 600 }}>{selected?.name ?? "未命名业务"}</div>
+                  <div style={{ marginTop: 8 }}>地址：{selected?.address ?? "未知地址"}</div>
+                  <div style={{ marginTop: 8 }}>电话：{selected?.phone ?? selected?.tel ?? "未提供"}</div>
+                  <div style={{ marginTop: 8 }}>类型：{selected?.type ?? selected?.category ?? "未分类"}</div>
+                  {selected?.description ? (
+                      <div style={{ marginTop: 8 }}>描述：{selected?.description}</div>
+                  ) : null}
+              </div>
+          </Drawer>
+        </div>
 	);
 };
 
