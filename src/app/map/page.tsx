@@ -43,12 +43,12 @@ const JiuFengMap: React.FC = () => {
 		<div>
 			<MapInit />
 
-			<Dock
+			{/* <Dock
 				items={items}
 				panelHeight={68}
 				baseItemSize={50}
 				magnification={70}
-			/>
+			/> */}
 
 			<Config isOpen={isOpen} onClose={toggleDrawer} />
 		</div>

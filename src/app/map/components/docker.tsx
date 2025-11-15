@@ -23,6 +23,8 @@ interface LiquidGlassCardProps {
 	shadowIntensity?: "none" | "xs" | "sm" | "md" | "lg" | "xl";
 	borderRadius?: string;
 	glowIntensity?: "none" | "xs" | "sm" | "md" | "lg" | "xl";
+	initial?: any;
+	dragMomentum?: boolean;
 }
 
 export const LiquidGlassCard = ({
@@ -114,9 +116,7 @@ export const LiquidGlassCard = ({
 						: undefined,
 					onClick: expandable ? handleToggleExpansion : undefined,
 					drag: draggable,
-					dragConstraints: draggable
-						? { left: 0, right: 0, top: 0, bottom: 0 }
-						: undefined,
+					dragConstraints: undefined,
 					dragElastic: draggable ? 0.3 : undefined,
 					dragTransition: draggable
 						? {
@@ -179,6 +179,7 @@ export const LiquidGlassCard = ({
 					style={{
 						borderRadius,
 						filter: "url(#glass-blur)",
+						pointerEvents: "none",
 					}}
 				/>
 
@@ -188,6 +189,7 @@ export const LiquidGlassCard = ({
 					style={{
 						borderRadius,
 						boxShadow: glowStyles[glowIntensity],
+						pointerEvents: "none",
 					}}
 				/>
 
@@ -197,11 +199,13 @@ export const LiquidGlassCard = ({
 					style={{
 						borderRadius,
 						boxShadow: shadowStyles[shadowIntensity],
+						pointerEvents: "none",
 					}}
 				/>
 
-				{/* Content */}
-				{children}
+				<div className="relative" style={{ zIndex: 30 }}>
+					{children}
+				</div>
 			</MotionComponent>
 		</>
 	);

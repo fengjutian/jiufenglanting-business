@@ -28,6 +28,11 @@ export const typeList = {
   篮球: 'basketball',
   棋牌: 'chess',
   台球: 'table_tennis',
+  茶楼: 'tea_room',
+  烟酒: 'alcohol',
+  口腔: 'oral',
+  金店: 'gold_store',
+  电动车: 'electric_car',
 } as const
 
 export type typeList = typeof typeList[keyof typeof typeList]
@@ -62,4 +67,9 @@ export const typeColorMap: Record<string, string> = {
   basketball: '#e67e22',
   chess: '#2c3e50',
   table_tennis: '#2ecc71',
+  tea_room: '#00cec9',
+  alcohol: '#b8860b',
+  oral: '#48dbfb',
+  gold_store: '#ffd700',
+  electric_car: '#2e86de',
 };

@@ -2,12 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { raw as businessRaw } from "../../../scripts/business.ts";
 import { useConfigStore } from "@/store/useConfigStore";
-import { typeColorMap } from "@/../type/businessType";
+import { typeColorMap, typeList as typeListMap } from "@/../type/businessType";
+import { LiquidGlassCard } from "./components/docker";
+import styled from "styled-components";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 
-	const position = [118.881076, 31.960958];
-	const key = "5131350db8ad49230fd4c7f3cab4f1d8";
+const position = [118.881076, 31.960958];
+const key = "5131350db8ad49230fd4c7f3cab4f1d8";
 
 const MapInit = () => {
     const [businessList, setBusinessList] = useState<any[]>([]);
@@ -33,9 +35,9 @@ const MapInit = () => {
 
 			// 创建地图实例
 			const amap = new AMap.Map("mapContainer", {
-				zoom: 15, //初始化地图层级
+				zoom: 14,
 				center: position,
-				mapStyle: mapStyleList[0],
+				mapStyle: mapStyleList[7],
 			});
 
 			// 优化标记添加逻辑，使用批量添加
@@ -246,6 +248,26 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 		}
 	}, [businessList]);
 
+	const LegendScroll = styled.div`
+		padding: 12px;
+		height: 300px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		scrollbar-color: rgba(130, 140, 180, 0.6) transparent;
+		&::-webkit-scrollbar { width: 8px; }
+		&::-webkit-scrollbar-track { background: transparent; }
+		&::-webkit-scrollbar-thumb {
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.25));
+			border-radius: 8px;
+			border: 1px solid rgba(255, 255, 255, 0.4);
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.35));
+		}
+	`;
+
 	return (
 		<div style={{ position: "relative", width: "100vw", height: "100vh" }}>
 			<div id="mapContainer" style={{ width: "100%", height: "100%" }}></div>
@@ -301,25 +323,61 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 							display: "none",
 						}}
 					/>
-				</label> */}
-        </div>
-          <Drawer
-              open={detailOpen}
-              onClose={() => setDetailOpen(false)}
-              direction="right"
-              size="420px"
-          >
-              <div style={{ padding: 16 }}>
-                  <div style={{ fontSize: 18, fontWeight: 600 }}>{selected?.name ?? "未命名业务"}</div>
-                  <div style={{ marginTop: 8 }}>地址：{selected?.address ?? "未知地址"}</div>
-                  <div style={{ marginTop: 8 }}>电话：{selected?.phone ?? selected?.tel ?? "未提供"}</div>
-                  <div style={{ marginTop: 8 }}>类型：{selected?.type ?? selected?.category ?? "未分类"}</div>
-                  {selected?.description ? (
-                      <div style={{ marginTop: 8 }}>描述：{selected?.description}</div>
-                  ) : null}
-              </div>
-          </Drawer>
-        </div>
+			</label> */}
+			</div>
+			<div
+				style={{
+					position: "absolute",
+					left: "20px",
+					top: "20px",
+					zIndex: 1000,
+				}}
+			>
+				<LiquidGlassCard width="180px" height="auto" draggable initial={{ x: 0, y: 0 }} dragMomentum={false}>
+					<LegendScroll>
+          {Object.entries(typeListMap).map(([cn, key]) => (
+            <div
+              key={key}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "6px 8px",
+              }}
+            >
+              <div
+                style={{
+                  width: 14,
+                  height: 14,
+                  borderRadius: "30%",
+                  background: typeColorMap[key] ?? "#666",
+                  border: "1px solid rgba(255,255,255,0.8)",
+                  boxShadow: "0 0 4px rgba(0,0,0,.2)",
+                }}
+              />
+              <div style={{ fontSize: 14 }}>{cn}</div>
+            </div>
+          ))}
+					</LegendScroll>
+				</LiquidGlassCard>
+			</div>
+				<Drawer
+					open={detailOpen}
+					onClose={() => setDetailOpen(false)}
+					direction="right"
+					size="420px"
+				>
+					<div style={{ padding: 16 }}>
+						<div style={{ fontSize: 18, fontWeight: 600 }}>{selected?.name ?? "未命名业务"}</div>
+						<div style={{ marginTop: 8 }}>地址：{selected?.address ?? "未知地址"}</div>
+						<div style={{ marginTop: 8 }}>电话：{selected?.phone ?? selected?.tel ?? "未提供"}</div>
+						<div style={{ marginTop: 8 }}>类型：{selected?.type ?? selected?.category ?? "未分类"}</div>
+						{selected?.description ? (
+							<div style={{ marginTop: 8 }}>描述：{selected?.description}</div>
+						) : null}
+					</div>
+				</Drawer>
+			</div>
 	);
 };
 
