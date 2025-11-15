@@ -309,5 +309,47 @@ export const raw: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 22,
+    name: '泸溪河桃酥(文靖路店)',
+    email: '',
+    address: '南京市江宁区文靖路399号',
+    type: typeList.糕点,
+    contact: '19052821064',
+    rating: null,
+    latitude: 31.960668,
+    longitude: 118.851463,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 23,
+    name: '蓝眼泪',
+    email: '',
+    address: '南京市江宁区上佘路1号',
+    type: typeList.景点,
+    contact: '',
+    rating: null,
+    latitude: 31.990658,
+    longitude: 118.925163,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 24,
+    name: '江宁肚包鸡(上坊店)',
+    email: '',
+    address: '南京市江宁区万安北路99号1幢108室',
+    type: typeList.中餐,
+    contact: '17798520177',
+    rating: null,
+    latitude: 31.969717,
+    longitude: 118.875865,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]

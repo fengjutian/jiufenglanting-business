@@ -34,6 +34,10 @@ export const typeList = {
   金店: 'gold_store',
   电动车: 'electric_car',
   烤鸭: 'duck',
+  景点: 'attraction',
+  商店: 'store',
+  中餐: 'chinese',
+  西餐: 'western',
 } as const
 
 export type typeList = typeof typeList[keyof typeof typeList]
@@ -74,4 +78,8 @@ export const typeColorMap: Record<string, string> = {
   gold_store: '#ffd700',
   electric_car: '#2e86de',
   duck: '#a0522d',
+  attraction: '#e17055',
+  store: '#2d3436',
+  chinese: '#ff4d4f',
+  western: '#6c5ce7',
 };
