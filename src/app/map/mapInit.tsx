@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { raw as businessRaw } from "../../../scripts/business.ts";
 import { useConfigStore } from "@/store/useConfigStore";
+import { typeColorMap } from "@/../type/businessType";
 
 	const position = [118.881076, 31.960958];
 	const key = "5131350db8ad49230fd4c7f3cab4f1d8";
@@ -36,7 +37,7 @@ const MapInit = () => {
 			// 优化标记添加逻辑，使用批量添加
 			const validMarkers: any[] = [];
 			const markerInfoWindows: any[] = [];
-			
+
 			businessData.forEach((business, index) => {
 				console.log(`业务数据 ${index}:`, business);
 				// 尝试多种可能的经纬度字段名
@@ -67,10 +68,12 @@ const MapInit = () => {
 				// 检查经纬度是否有效 - 高德地图使用 [longitude, latitude] 顺序
 				if (!isNaN(longitude) && !isNaN(latitude) && longitude !== null && latitude !== null && 
 				    longitude >= -180 && longitude <= 180 && latitude >= -90 && latitude <= 90) {
-					// 创建标记
+					const color = typeColorMap[(business.type ?? '').toString()] ?? '#666';
 					const marker = new AMap.Marker({
-						position: [longitude, latitude], // 恢复正确的坐标顺序
-						title: business.name || `业务点 ${index}`, // 添加标题便于识别
+						position: [longitude, latitude],
+						title: business.name || `业务点 ${index}`,
+						content: `<div style="width:16px;height:16px;border-radius:50%;background:${color};border:2px solid #fff;box-shadow:0 0 4px rgba(0,0,0,.3)"></div>`,
+						offset: new AMap.Pixel(-10, -10)
 					});
 					
 					// 创建信息窗口
@@ -273,7 +276,7 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 				}}
 			>
 				{/* 导出按钮 */}
-				<button
+				{/* <button
 					onClick={exportBusinessToExcel}
 					style={{
 						backgroundColor: "#1677ff",
@@ -287,10 +290,10 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 					}}
 				>
 					导出Excel
-				</button>
+				</button> */}
 
 				{/* 导入按钮 - 使用label包裹input，实现美观的文件选择按钮 */}
-				<label
+				{/* <label
 					style={{
 						backgroundColor: "#52c41a",
 						color: "white",
@@ -313,7 +316,7 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 							display: "none",
 						}}
 					/>
-				</label>
+				</label> */}
 			</div>
 		</div>
 	);
