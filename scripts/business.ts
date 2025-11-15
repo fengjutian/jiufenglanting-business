@@ -351,5 +351,33 @@ export const raw: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 25,
+    name: '华润燃气客户服务中心',
+    email: '',
+    address: '',
+    type: typeList.燃气,
+    contact: '',
+    rating: null,
+    latitude: 31.958917,
+    longitude: 118.862188,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 26,
+    name: '楠鲸口腔',
+    email: '',
+    address: '',
+    type: typeList.口腔,
+    contact: '',
+    rating: null,
+    latitude: 31.958933,
+    longitude: 118.862504,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]
