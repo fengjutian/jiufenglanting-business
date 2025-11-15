@@ -1,6 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import fs from "fs";
-import path from "path";
 
 // 为开发环境创建一个全局变量来防止多次实例化 PrismaClient
 const globalForPrisma = global as unknown as {
@@ -9,16 +7,7 @@ const globalForPrisma = global as unknown as {
 
 const sqliteUrl = (process.env.DATABASE_URL && process.env.DATABASE_URL.trim() !== "")
   ? process.env.DATABASE_URL
-  : (process.env.NETLIFY ? "file:/tmp/dev.db" : "file:./dev.db");
-
-if (sqliteUrl.startsWith("file:/tmp/")) {
-  const filePath = sqliteUrl.replace(/^file:/, "").split("?")[0];
-  try {
-    if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, "");
-    }
-  } catch {}
-}
+  : (process.env.NETLIFY ? "file::memory:?cache=shared" : "file:./dev.db");
 
 export const prisma = globalForPrisma.prisma || new PrismaClient({ datasources: { db: { url: sqliteUrl } } });
 
