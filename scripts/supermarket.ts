@@ -156,4 +156,32 @@ export const supermarketList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'supermarket-6',
+    name: '俊权优选仓储超市(义乌小商品城店)',
+    email: '',
+    address: '南京市江宁区天元东路388号(原江宁汽车客运站)',
+    type: typeList.超市,
+    contact: '13245875396',
+    rating: null,
+    latitude: 31.93978,
+    longitude: 118.881209,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-7',
+    name: '好又多连锁超市(世纪东山店)',
+    email: '',
+    address: '南京市江宁区东山街道万安西路168号世纪东山花园68幢111室',
+    type: typeList.超市,
+    contact: '15050532872 18269852551',
+    rating: null,
+    latitude: 31.959577,
+    longitude: 118.867344,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
