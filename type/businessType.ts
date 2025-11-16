@@ -44,6 +44,8 @@ export const typeList = {
   瑜伽: 'yoga',
   健身房: 'gym',
   便利店: 'convenience_store',
+  ktv: 'ktv',
+  银行: 'bank',
 } as const
 
 export type typeList = typeof typeList[keyof typeof typeList]
@@ -94,4 +96,6 @@ export const typeColorMap: Record<string, string> = {
   yoga: '#a29bfe',
   gym: '#00d2d3',
   convenience_store: '#1dd1a1',
+  ktv: '#a55eea',
+  bank: '#4b7bec',
 };

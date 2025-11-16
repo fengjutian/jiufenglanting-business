@@ -114,4 +114,18 @@ export const hotelSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'hotel-9',
+    name: '格林豪泰酒店(南京江宁黄金海岸店)',
+    email: '',
+    address: '南京市江宁区北沿路105号',
+    type: typeList.酒店,
+    contact: '025-52396299 025-52397266 18114497303',
+    rating: null,
+    latitude: 31.956058,
+    longitude: 118.833465,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

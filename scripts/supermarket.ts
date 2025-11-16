@@ -408,4 +408,32 @@ export const supermarketList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'supermarket-23',
+    name: '百家超市(东新南路店)',
+    email: '',
+    address: '南京市江宁区东新南路15号瓯江大厦C座',
+    type: typeList.超市,
+    contact: '025-52650049 13152861035',
+    rating: null,
+    latitude: 31.954285,
+    longitude: 118.852117,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-24',
+    name: '汇万佳农副产品平价直销店',
+    email: '',
+    address: '南京市江宁区东新南路1号',
+    type: typeList.超市,
+    contact: '13951970893',
+    rating: null,
+    latitude: 31.955284,
+    longitude: 118.852,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
