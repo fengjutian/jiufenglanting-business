@@ -2,6 +2,8 @@ import { typeList } from '../type/businessType.ts'
 import { supermarketList } from './supermarket.ts'
 import { pharmacySeedEntries } from './pharmacy.ts'
 import { fruitSeedEntries } from './fruit.ts'
+import { chineseSeedEntries } from './chinese.ts'
+import { hotelSeedEntries } from './hotel.ts'
 
 export type BusinessSeedEntry = {
   id?: string | number
@@ -19,6 +21,7 @@ export type BusinessSeedEntry = {
 }
 
 export const raw: BusinessSeedEntry[] = [
+  ...hotelSeedEntries,
   {
     id: 3,
     name: '老街大排档',
@@ -29,20 +32,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.967994,
     longitude: 118.877369,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 4,
-    name: '川福楼私房菜',
-    email: '',
-    address: '南京市江宁区东山街道祈泽佳苑9幢一楼102-105室',
-    type: typeList.餐饮,
-    contact: '',
-    rating: null,
-    latitude: 31.967915,
-    longitude: 118.877252,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -202,20 +191,6 @@ export const raw: BusinessSeedEntry[] = [
     description: null
   },
   {
-    id: 18,
-    name: '小厨娘淮扬菜',
-    email: '',
-    address: '南京市江宁区东山镇上元大街549号',
-    type: typeList.餐饮,
-    contact: '4008519797',
-    rating: null,
-    latitude: 31.954479,
-    longitude: 118.847828,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
     id: 20,
     name: '华莱士·全鸡汉堡(天元吉第城)',
     email: '',
@@ -272,20 +247,6 @@ export const raw: BusinessSeedEntry[] = [
     description: null
   },
   {
-    id: 24,
-    name: '江宁肚包鸡(上坊店)',
-    email: '',
-    address: '南京市江宁区万安北路99号1幢108室',
-    type: typeList.中餐,
-    contact: '17798520177',
-    rating: null,
-    latitude: 31.969717,
-    longitude: 118.875865,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
     id: 25,
     name: '华润燃气客户服务中心',
     email: '',
@@ -328,20 +289,6 @@ export const raw: BusinessSeedEntry[] = [
     description: null
   },
   {
-    id: 28,
-    name: '地锅传奇(湖山路店)',
-    email: '',
-    address: '南京市江宁区湖山路370号,天元吉第城西门斜对面',
-    type: typeList.餐饮,
-    contact: '18512559909 18662521878',
-    rating: null,
-    latitude: 31.945764,
-    longitude: 118.86932,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
     id: 29,
     name: '乐喜面馆(天元吉第城店)',
     email: '',
@@ -365,62 +312,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.947699,
     longitude: 118.87508,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 31,
-    name: '诚伟菜馆(天元吉第城店)',
-    email: '',
-    address: '南京市江宁区天元吉第商业9幢101室',
-    type: typeList.中餐,
-    contact: '',
-    rating: null,
-    latitude: 31.947907,
-    longitude: 118.875035,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 32,
-    name: '戴欣川菜(湖山路店)',
-    email: '',
-    address: '南京市江宁区湖山路天元吉第城商铺8栋102室戴欣川菜',
-    type: typeList.中餐,
-    contact: '18012971288',
-    rating: null,
-    latitude: 31.949764,
-    longitude: 118.875545,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 33,
-    name: '百姓人家家常菜馆(湖东路)',
-    email: '',
-    address: '南京市江宁区科学园湖山路369号天元吉地城北门8-107',
-    type: typeList.中餐,
-    contact: '13815447974 15261467477',
-    rating: null,
-    latitude: 31.949906,
-    longitude: 118.875115,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 34,
-    name: '吴府记乡味地锅',
-    email: '',
-    address: '南京市江宁区淳化街道湖东路天元吉第城北门7栋103',
-    type: typeList.中餐,
-    contact: '13851468093 18795958536',
-    rating: null,
-    latitude: 31.950062,
-    longitude: 118.87448,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -450,20 +341,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.960469,
     longitude: 118.890096,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: '37',
-    name: '正心堂大药房',
-    email: '',
-    address: '南京市江宁区江宁区东山街道上坊社区嘉茂路向东60米',
-    type: typeList.药店,
-    contact: '025-87731990',
-    rating: null,
-    latitude: 31.960401,
-    longitude: 118.890454,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -526,4 +403,5 @@ export const raw: BusinessSeedEntry[] = [
   },
   ...pharmacySeedEntries,
   ...fruitSeedEntries,
+  ...chineseSeedEntries
 ]
