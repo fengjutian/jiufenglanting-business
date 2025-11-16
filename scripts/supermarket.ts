@@ -436,4 +436,18 @@ export const supermarketList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'supermarket-25',
+    name: '好又多超市(凤翔花园店)',
+    email: '',
+    address: '南京市雨花台区凤翔花园三期12号门面房',
+    type: typeList.超市,
+    contact: '17770412586',
+    rating: null,
+    latitude: 31.965757,
+    longitude: 118.762394,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

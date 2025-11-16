@@ -450,4 +450,32 @@ export const chineseSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'chinese-25',
+    name: '浪里白餐饮(安德门大街七店)',
+    email: '',
+    address: '南京市雨花台区安德门大街46号',
+    type: typeList.中餐,
+    contact: '18013931199',
+    rating: null,
+    latitude: 31.973696,
+    longitude: 118.763106,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'chinese-26',
+    name: '阳光老卤面',
+    email: '',
+    address: '南京市雨花台区安德门大街46号',
+    type: typeList.中餐,
+    contact: '15651758663',
+    rating: null,
+    latitude: 31.973776,
+    longitude: 118.763135,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
