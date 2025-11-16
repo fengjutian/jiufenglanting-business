@@ -72,4 +72,46 @@ export const hotelSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'hotel-6',
+    name: '汉庭酒店(南京江宁竹山路地铁站店)',
+    email: '',
+    address: '南京市江宁区天元中路99号赏桂苑28幢',
+    type: typeList.酒店,
+    contact: '025-69925566',
+    rating: null,
+    latitude: 31.930402,
+    longitude: 118.83988,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'hotel-7',
+    name: '朵季酒店公寓(竹山路地铁站店)',
+    email: '',
+    address: '南京市江宁区天元中路99号4楼',
+    type: typeList.酒店,
+    contact: '13776418699',
+    rating: null,
+    latitude: 31.929995,
+    longitude: 118.838149,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'hotel-8',
+    name: '云枫电竞酒店(南京竹山路地铁站店)',
+    email: '',
+    address: '南京市江宁区天元中路68号',
+    type: typeList.酒店,
+    contact: '13915931661 18012959088',
+    rating: null,
+    latitude: 31.931323,
+    longitude: 118.839226,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

@@ -4,6 +4,10 @@ import { pharmacySeedEntries } from './pharmacy.ts'
 import { fruitSeedEntries } from './fruit.ts'
 import { chineseSeedEntries } from './chinese.ts'
 import { hotelSeedEntries } from './hotel.ts'
+import { kfcSeedEntries } from './kfc.ts'
+import { bakeryList } from './bakery.ts'
+import { duckSeedEntries } from './duck.ts'
+
 
 export type BusinessSeedEntry = {
   id?: string | number
@@ -22,6 +26,9 @@ export type BusinessSeedEntry = {
 
 export const raw: BusinessSeedEntry[] = [
   ...hotelSeedEntries,
+  ...kfcSeedEntries,
+  ...bakeryList,
+  ...duckSeedEntries,
   {
     id: 3,
     name: '老街大排档',
