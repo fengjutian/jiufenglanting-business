@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { raw as businessRaw } from "../../../scripts/business.ts";
 import { useConfigStore } from "@/store/useConfigStore";
 import { typeColorMap, typeList as typeListMap } from "@/../type/businessType";
@@ -15,6 +15,16 @@ const MapInit = () => {
     const [businessList, setBusinessList] = useState<any[]>([]);
     const [detailOpen, setDetailOpen] = useState(false);
     const [selected, setSelected] = useState<any | null>(null);
+
+    const typeCounts = useMemo(() => {
+        const counts: Record<string, number> = {};
+        businessList.forEach((b: any) => {
+            const t = (b?.type ?? b?.category ?? "").toString();
+            if (!t) return;
+            counts[t] = (counts[t] ?? 0) + 1;
+        });
+        return counts;
+    }, [businessList]);
 
 	const mapTheme = useConfigStore((state: any) => state.mapTheme?.store);
 	const mapThemeByName = useConfigStore((state: any) => state.mapTheme?.mapThemeByName);
@@ -350,9 +360,10 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
                   boxShadow: "0 0 4px rgba(0,0,0,.2)",
                 }}
               />
-              <div style={{ fontSize: 14 }}>{cn}</div>
-            </div>
-          ))}
+                        <div style={{ fontSize: 14 }}>{cn}</div>
+                        <div style={{ marginLeft: "auto", fontSize: 12, color: "#999" }}>{typeCounts[key] ?? 0}</div>
+                    </div>
+                ))}
 					</LegendScroll>
 				</LiquidGlassCard>
 			</div>
