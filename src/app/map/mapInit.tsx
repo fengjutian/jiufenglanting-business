@@ -28,9 +28,9 @@ const MapInit = () => {
     try {
       const { default: AMapLoader } = await import("@amap/amap-jsapi-loader");
       const AMap = await AMapLoader.load({
-          key: key, // 申请好的Web端开发者Key
-          version: "2.0", // 指定要加载的 JSAPI 的版本
-          plugins: [], //插件列表
+        key: key, // 申请好的Web端开发者Key
+        version: "2.0", // 指定要加载的 JSAPI 的版本
+        plugins: [], //插件列表
       });
 
 			// 创建地图实例
@@ -115,12 +115,7 @@ const MapInit = () => {
 	const getBusinessData = async () => {
 		const res = await fetch("/api/excel");
 		const list = await res.json();
-
-		console.log(list);
-
 		const businessList = businessRaw as any[];
-
-		console.log(12, businessList);
 		return businessList;
 	};
 
