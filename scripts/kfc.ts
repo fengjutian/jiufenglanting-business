@@ -30,4 +30,18 @@ export const kfcSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 11,
+    name: '肯德基(天景山店)',
+    email: '',
+    address: '南京市江宁区湖东路29号一层(1-181-17-2)号',
+    type: typeList.肯德基,
+    contact: '025-52151290',
+    rating: null,
+    latitude: 31.942106,
+    longitude: 118.874569,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

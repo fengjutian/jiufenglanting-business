@@ -7,6 +7,7 @@ import { hotelSeedEntries } from './hotel.ts'
 import { kfcSeedEntries } from './kfc.ts'
 import { bakeryList } from './bakery.ts'
 import { duckSeedEntries } from './duck.ts'
+import { teaSeedEntries } from './tea.ts'
 
 
 export type BusinessSeedEntry = {
@@ -114,20 +115,6 @@ export const raw: BusinessSeedEntry[] = [
     description: null
   },
   {
-    id: 11,
-    name: '肯德基(天景山店)',
-    email: '',
-    address: '南京市江宁区湖东路29号一层(1-181-17-2)号',
-    type: typeList.肯德基,
-    contact: '025-52151290',
-    rating: null,
-    latitude: 31.942106,
-    longitude: 118.874569,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
     id: 12,
     name: '老翟版面',
     email: '',
@@ -179,20 +166,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.961027,
     longitude: 118.861195,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 17,
-    name: '蜜雪冰城',
-    email: '',
-    address: '',
-    type: typeList.蜜雪冰城,
-    contact: '',
-    rating: null,
-    latitude: 31.962031,
-    longitude: 118.861116,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -436,6 +409,7 @@ export const raw: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  ...teaSeedEntries,
   ...pharmacySeedEntries,
   ...fruitSeedEntries,
   ...chineseSeedEntries

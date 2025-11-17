@@ -15,6 +15,7 @@ const MapInit = () => {
     const [businessList, setBusinessList] = useState<any[]>([]);
     const [detailOpen, setDetailOpen] = useState(false);
     const [selected, setSelected] = useState<any | null>(null);
+    const [selectedTypes, setSelectedTypes] = useState<string[]>(Object.values(typeListMap));
 
     const typeCounts = useMemo(() => {
         const counts: Record<string, number> = {};
@@ -25,6 +26,14 @@ const MapInit = () => {
         });
         return counts;
     }, [businessList]);
+
+    const filteredBusinesses = useMemo(() => {
+        if (!selectedTypes || selectedTypes.length === 0) return [] as any[];
+        return businessList.filter((b: any) => {
+            const t = (b?.type ?? b?.category ?? "").toString();
+            return selectedTypes.includes(t);
+        });
+    }, [businessList, selectedTypes]);
 
 	const mapTheme = useConfigStore((state: any) => state.mapTheme?.store);
 	const mapThemeByName = useConfigStore((state: any) => state.mapTheme?.mapThemeByName);
@@ -237,21 +246,19 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 };
 
 	useEffect(() => {
-		const loadData = async () => {
-			const data = await getBusinessData();
-			setBusinessList(data);
-			// 数据加载完成后初始化地图并显示业务点
-			initializeMap(data);
-		};
+        const loadData = async () => {
+            const data = await getBusinessData();
+            setBusinessList(data);
+        };
 
 		loadData();
 	}, []);
 
-	useEffect(() => {
-		if (businessList.length > 0) {
-			initializeMap(businessList);
-		}
-	}, [businessList]);
+    useEffect(() => {
+        if (filteredBusinesses.length > 0 || businessList.length > 0) {
+            initializeMap(filteredBusinesses);
+        }
+    }, [filteredBusinesses]);
 
 	const LegendScroll = styled.div`
 		padding: 12px;
@@ -360,6 +367,19 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
                   boxShadow: "0 0 4px rgba(0,0,0,.2)",
                 }}
               />
+                        <input
+                            type="checkbox"
+                            checked={selectedTypes.includes(key)}
+                            onChange={(e) => {
+                                setSelectedTypes((prev) => {
+                                    if (e.target.checked) {
+                                        return Array.from(new Set([...prev, key]));
+                                    }
+                                    return prev.filter((t) => t !== key);
+                                });
+                            }}
+                            style={{ marginRight: 6 }}
+                        />
                         <div style={{ fontSize: 14 }}>{cn}</div>
                         <div style={{ marginLeft: "auto", fontSize: 12, color: "#999" }}>{typeCounts[key] ?? 0}</div>
                     </div>
