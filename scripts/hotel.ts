@@ -240,4 +240,18 @@ export const hotelSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'hotel-18',
+    name: '骏怡连锁酒店(南京天元东路店)',
+    email: '',
+    address: '南京市江宁区秣陵街道天元东路931号4幢',
+    type: typeList.民宿,
+    contact: '025-87184718',
+    rating: null,
+    latitude: 31.940764,
+    longitude: 118.879715,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

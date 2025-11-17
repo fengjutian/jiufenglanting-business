@@ -449,5 +449,19 @@ export const supermarketList: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 'supermarket-26',
+    name: '京东便利店(天元东路店)',
+    email: '',
+    address: '南京市江宁区天元东路与城东路交叉口西120米',
+    type: typeList.便利店,
+    contact: '13260709886',
+    rating: null,
+    latitude: 31.940866,
+    longitude: 118.880326,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]
