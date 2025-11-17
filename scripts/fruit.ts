@@ -86,4 +86,32 @@ export const fruitSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'fruit-7',
+    name: '大喜子水果店',
+    email: '',
+    address: '南京市雨花台区宁南大道19号兰芷苑03幢',
+    type: typeList.水果店,
+    contact: '18061697635',
+    rating: null,
+    latitude: 31.979301,
+    longitude: 118.788703,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'fruit-8',
+    name: '倍加水果店',
+    email: '',
+    address: '南京市江宁区天景山公寓欣荣苑东门旁',
+    type: typeList.水果店,
+    contact: '18151601779',
+    rating: null,
+    latitude: 31.940827,
+    longitude: 118.875601,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

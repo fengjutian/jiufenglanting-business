@@ -156,4 +156,46 @@ export const pharmacySeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'pharmacy-12',
+    name: '益丰大药房(天元东路店)',
+    email: '',
+    address: '南京市江宁区地铁一号南延线龙眠大道站城东路站1层1号第1间',
+    type: typeList.药店,
+    contact: '17372256521',
+    rating: null,
+    latitude: 31.940229,
+    longitude: 118.876354,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'pharmacy-13',
+    name: '南京江宁天景山诊所',
+    email: '',
+    address: '南京市江宁区秣陵街道天元东路865号',
+    type: typeList.小诊所,
+    contact: '025-52178883',
+    rating: null,
+    latitude: 31.940321,
+    longitude: 118.87574,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'pharmacy-14',
+    name: '南京上元堂药店(天景山路店)',
+    email: '',
+    address: '南京市江宁区天元东路867号(龙眠大道地铁站1号口步行260米)',
+    type: typeList.药店,
+    contact: '025-52178607',
+    rating: null,
+    latitude: 31.940522,
+    longitude: 118.875682,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

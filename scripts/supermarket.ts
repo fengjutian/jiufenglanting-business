@@ -449,5 +449,5 @@ export const supermarketList: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
-  },
+  }
 ]
