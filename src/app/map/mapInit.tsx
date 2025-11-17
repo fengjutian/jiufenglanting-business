@@ -347,7 +347,9 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 			>
 				<LiquidGlassCard width="180px" height="auto" draggable initial={{ x: 0, y: 0 }} dragMomentum={false}>
 					<LegendScroll>
-          {Object.entries(typeListMap).map(([cn, key]) => (
+				  {Object.entries(typeListMap)
+				    .sort(([, a], [, b]) => (typeCounts[b] ?? 0) - (typeCounts[a] ?? 0))
+				    .map(([cn, key]) => (
             <div
               key={key}
               style={{
