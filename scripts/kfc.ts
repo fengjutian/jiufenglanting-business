@@ -44,4 +44,18 @@ export const kfcSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 6,
+    name: '肯德基(南京上坊店)',
+    email: '',
+    address: '南京市江宁区东山街道文靖东路333号1幢104室一层',
+    type: typeList.肯德基,
+    contact: '',
+    rating: null,
+    latitude: 31.968904,
+    longitude: 118.876375,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

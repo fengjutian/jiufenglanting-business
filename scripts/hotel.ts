@@ -254,4 +254,32 @@ export const hotelSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'hotel-19',
+    name: '南京景天宾馆(龙眠大道地铁站店)',
+    email: '',
+    address: '南京市江宁区东山镇天元东路37号景山综合楼D03号',
+    type: typeList.酒店,
+    contact: '025-52176073 19509910068',
+    rating: null,
+    latitude: 31.940102,
+    longitude: 118.875637,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'hotel-20',
+    name: '格莱酒店(江宁大学城店)',
+    email: '',
+    address: '南京市江宁区天元东路779号天景山商业中心8幢205室',
+    type: typeList.酒店,
+    contact: '025-87101599 13376064241',
+    rating: null,
+    latitude: 31.940029,
+    longitude: 118.875193,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

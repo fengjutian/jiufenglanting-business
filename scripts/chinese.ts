@@ -716,4 +716,32 @@ export const chineseSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'chinese-44',
+    name: '呀哈哈光头药膳鸡',
+    email: '',
+    address: '南京市江宁区天元东路865号天景山商业中心8幢147-1室',
+    type: typeList.中餐,
+    contact: '19961863923',
+    rating: null,
+    latitude: 31.940055,
+    longitude: 118.875508,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'chinese-45',
+    name: '星柒叁木炭烧烤(天元东路店)',
+    email: '',
+    address: '南京市江宁区天元东路辅路与天景山路交叉口西北40米',
+    type: typeList.中餐,
+    contact: '',
+    rating: null,
+    latitude: 31.940074,
+    longitude: 118.875487,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

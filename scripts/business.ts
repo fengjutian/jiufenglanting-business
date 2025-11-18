@@ -8,6 +8,9 @@ import { kfcSeedEntries } from './kfc.ts'
 import { bakeryList } from './bakery.ts'
 import { duckSeedEntries } from './duck.ts'
 import { teaSeedEntries } from './tea.ts'
+import { wangkaList } from './wangka.ts'
+import { bankList } from './bank.ts'
+
 
 
 export type BusinessSeedEntry = {
@@ -30,6 +33,8 @@ export const raw: BusinessSeedEntry[] = [
   ...kfcSeedEntries,
   ...bakeryList,
   ...duckSeedEntries,
+  ...wangkaList,
+  ...bankList,
   {
     id: 3,
     name: '老街大排档',
@@ -54,20 +59,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.962192,
     longitude: 118.880968,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: 6,
-    name: '肯德基(南京上坊店)',
-    email: '',
-    address: '南京市江宁区东山街道文靖东路333号1幢104室一层',
-    type: typeList.肯德基,
-    contact: '',
-    rating: null,
-    latitude: 31.968904,
-    longitude: 118.876375,
     otherInfo: null,
     imageBase64: null,
     description: null
@@ -377,34 +368,6 @@ export const raw: BusinessSeedEntry[] = [
     rating: null,
     latitude: 31.964978,
     longitude: 118.879426,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: '42',
-    name: '网鱼电竞酒店(南京江宁大学城店)',
-    email: '',
-    address: '南京市江宁区天元东路949号(龙眠大道地铁站1号口步行360米)',
-    type: typeList.网咖,
-    contact: '17701581641',
-    rating: null,
-    latitude: 31.940915,
-    longitude: 118.880621,
-    otherInfo: null,
-    imageBase64: null,
-    description: null
-  },
-  {
-    id: '43',
-    name: '网鱼电竞(南京义乌小商品城店)',
-    email: '',
-    address: '南京市江宁区天元东路388号义乌小商品城34栋3楼301-303,324-328,342-346',
-    type: typeList.网咖,
-    contact: '19816534660',
-    rating: null,
-    latitude: 31.938187,
-    longitude: 118.877326,
     otherInfo: null,
     imageBase64: null,
     description: null
