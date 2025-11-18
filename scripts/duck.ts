@@ -16,4 +16,18 @@ export const duckSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'duck-2',
+    name: '陈林鸭子店(义乌总店)',
+    email: '',
+    address: '南京市江宁区天元东路999号天景山商业中心08幢142-2号',
+    type: typeList.烤鸭,
+    contact: '13914486757',
+    rating: null,
+    latitude: 31.939878,
+    longitude: 118.875171,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

@@ -463,5 +463,33 @@ export const supermarketList: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 'supermarket-27',
+    name: '云圣生鲜超市(云逸都荟花园西园店)',
+    email: '',
+    address: '南京市江宁区科建路456号云逸都荟花园西园',
+    type: typeList.超市,
+    contact: '',
+    rating: null,
+    latitude: 31.929937,
+    longitude: 118.862562,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-28',
+    name: '云逸生活百货(云逸都荟花园店)',
+    email: '',
+    address: '南京市江宁区科建路456号云逸都荟花园19幢101室',
+    type: typeList.超市,
+    contact: '13852298391',
+    rating: null,
+    latitude: 31.929849,
+    longitude: 118.862393,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]

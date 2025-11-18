@@ -198,4 +198,18 @@ export const pharmacySeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'pharmacy-15',
+    name: '御安堂药铺',
+    email: '',
+    address: '南京市江宁区云逸都荟花园西园北门东110米',
+    type: typeList.药店,
+    contact: '025-52188995 139129034027',
+    rating: null,
+    latitude: 31.93021,
+    longitude: 118.863453,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
