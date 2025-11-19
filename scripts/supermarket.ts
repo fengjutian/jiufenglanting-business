@@ -491,5 +491,33 @@ export const supermarketList: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 'supermarket-29',
+    name: 'LAWSON罗森(小龙湾地铁站店)',
+    email: '',
+    address: '南京市江宁区地铁1号线小龙湾站108-b(南京市江宁区天元中路118号)',
+    type: typeList.超市,
+    contact: '025-86175356 4008206390',
+    rating: null,
+    latitude: 31.930014,
+    longitude: 118.832764,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-30',
+    name: '怡购万家精致生活超市(江宁店)',
+    email: '',
+    address: '南京市江宁区天元中路229号',
+    type: typeList.超市,
+    contact: '',
+    rating: null,
+    latitude: 31.927618,
+    longitude: 118.827486,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]

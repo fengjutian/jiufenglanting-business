@@ -800,4 +800,46 @@ export const chineseSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'chinese-50',
+    name: '袁记云饺(小龙湾地铁站店)',
+    email: '',
+    address: '南京市江宁区天元中路118号小龙湾地铁站一层104-a区域',
+    type: typeList.中餐,
+    contact: '15951774933',
+    rating: null,
+    latitude: 31.92981,
+    longitude: 118.832129,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'chinese-51',
+    name: '沙县小吃(小龙湾店)',
+    email: '',
+    address: '南京市江宁区菲尼克斯路70号35幢104室',
+    type: typeList.中餐,
+    contact: '13859418838',
+    rating: null,
+    latitude: 31.930242,
+    longitude: 118.83226,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'chinese-52',
+    name: '南京新东新总店',
+    email: '',
+    address: '南京市江宁区上元大街240号供销商厦',
+    type: typeList.中餐,
+    contact: '025-52287799 025-52287999',
+    rating: null,
+    latitude: 31.951944,
+    longitude: 118.832523,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

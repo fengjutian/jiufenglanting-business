@@ -44,4 +44,18 @@ export const wangkaList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'wangka-4',
+    name: '网鱼电竞(江宁小龙湾地铁站店)',
+    email: '',
+    address: '南京市江宁区天元中路118号201室',
+    type: typeList.网咖,
+    contact: '13512529934',
+    rating: null,
+    latitude: 31.929942,
+    longitude: 118.832917,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

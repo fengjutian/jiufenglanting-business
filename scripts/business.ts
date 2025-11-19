@@ -10,6 +10,8 @@ import { duckSeedEntries } from './duck.ts'
 import { teaSeedEntries } from './tea.ts'
 import { wangkaList } from './wangka.ts'
 import { bankList } from './bank.ts'
+import { coffeeSeedEntries } from './coffee.ts'
+import { beautySeedEntries } from './beauty.ts'
 
 
 
@@ -35,6 +37,8 @@ export const raw: BusinessSeedEntry[] = [
   ...duckSeedEntries,
   ...wangkaList,
   ...bankList,
+  ...coffeeSeedEntries,
+  ...beautySeedEntries,
   {
     id: 3,
     name: '老街大排档',

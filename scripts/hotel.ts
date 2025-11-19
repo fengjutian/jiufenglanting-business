@@ -422,4 +422,46 @@ export const hotelSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'hotel-31',
+    name: '桔子酒店(南京百家湖小龙湾地铁站店)',
+    email: '',
+    address: '南京市江宁区天元中路118号(小龙湾地铁站2号口步行150米)',
+    type: typeList.酒店,
+    contact: '025-69035999',
+    rating: null,
+    latitude: 31.930276,
+    longitude: 118.83366,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'hotel-32',
+    name: '润葳酒店',
+    email: '',
+    address: '南京市江宁区菲尼克斯路70号总部基地36号楼',
+    type: typeList.酒店,
+    contact: '025-68563666',
+    rating: null,
+    latitude: 31.930461,
+    longitude: 118.833014,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'hotel-33',
+    name: '石城精选酒店(南京江宁万达店)',
+    email: '',
+    address: '南京市江宁区东山街道上元大街240号3楼',
+    type: typeList.酒店,
+    contact: '18114007587',
+    rating: null,
+    latitude: 31.951644,
+    longitude: 118.832401,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
