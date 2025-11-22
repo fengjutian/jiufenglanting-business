@@ -30,4 +30,18 @@ export const duckSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'duck-3',
+    name: '金陵烤鸭店',
+    email: '',
+    address: '南京市江宁区万安西路天云小区-南区',
+    type: typeList.烤鸭,
+    contact: '',
+    rating: null,
+    latitude: 31.959268,
+    longitude: 118.883031,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
