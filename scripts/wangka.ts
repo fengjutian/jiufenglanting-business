@@ -58,4 +58,18 @@ export const wangkaList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'wangka-5',
+    name: 'HR电竞酒店(江宁万达广场东域城店)',
+    email: '',
+    address: '南京市江宁区上元大街459号东域城F4层',
+    type: typeList.网咖,
+    contact: '025-52192115',
+    rating: null,
+    latitude: 31.953692,
+    longitude: 118.844066,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
