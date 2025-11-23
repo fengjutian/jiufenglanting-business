@@ -44,4 +44,18 @@ export const duckSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'duck-4',
+    name: '聚合福北京烤鸭',
+    email: '',
+    address: '南京市江宁区长塘巷6号1幢01号',
+    type: typeList.烤鸭,
+    contact: '',
+    rating: null,
+    latitude: 31.957789,
+    longitude: 118.85638,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
