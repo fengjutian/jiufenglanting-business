@@ -632,4 +632,18 @@ export const foodSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'food-46',
+    name: '谭大头酸菜鱼',
+    email: '',
+    address: '',
+    type: typeList.餐饮,
+    contact: '15150661451 18168066577',
+    rating: null,
+    latitude: 31.952437,
+    longitude: 118.860717,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
