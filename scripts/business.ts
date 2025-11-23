@@ -16,6 +16,11 @@ import { massageList } from './massage.ts'
 import { westernSeedEntry } from './western.ts'
 import { clothingList } from './clothing.ts'
 import { chessSeedEntries } from './chess.ts'
+import { foodSeedEntries } from './food.ts'
+import { graphicSeedEntries } from './graphic.ts'
+import { flowerSeedEntries } from './flower.ts'
+import { bbqList } from './bbq.ts'
+import { electricCarList } from './electric_car.ts'
 
 export type BusinessSeedEntry = {
   id?: string | number
@@ -45,6 +50,11 @@ export const raw: BusinessSeedEntry[] = [
   ...westernSeedEntry,
   ...clothingList,
   ...chessSeedEntries,
+  ...foodSeedEntries,
+  ...graphicSeedEntries,
+  ...flowerSeedEntries,
+  ...bbqList,
+  ...electricCarList,
   {
     id: 3,
     name: '老街大排档',

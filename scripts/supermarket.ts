@@ -519,5 +519,47 @@ export const supermarketList: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 'supermarket-31',
+    name: '昕昕烟酒百货(天云小区南区店)',
+    email: '',
+    address: '南京市江宁区天云小区南区东北门旁',
+    type: typeList.超市,
+    contact: '',
+    rating: null,
+    latitude: 31.959281,
+    longitude: 118.882874,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-32',
+    name: '利群百货超市(园中路店)',
+    email: '',
+    address: '南京市江宁区天宁雅居西南门东150米',
+    type: typeList.超市,
+    contact: '13814112680',
+    rating: null,
+    latitude: 31.95574,
+    longitude: 118.884239,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-33',
+    name: '杜康老酒(天宁雅居店)',
+    email: '',
+    address: '南京市江宁区园中路18号天宁雅居',
+    type: typeList.超市,
+    contact: '',
+    rating: null,
+    latitude: 31.955692,
+    longitude: 118.884323,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]

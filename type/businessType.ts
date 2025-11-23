@@ -50,6 +50,7 @@ export const typeList = {
   网咖: 'wangka',
   美容: 'beauty',
   服装: 'clothing',
+  图文: 'graphic',
 } as const
 
 export type typeList = typeof typeList[keyof typeof typeList]
@@ -106,4 +107,5 @@ export const typeColorMap: Record<string, string> = {
   wangka: '#00a8ff',
   beauty: '#ff85c0',
   clothing: '#e91e63',
+  graphic: '#8395a7',
 };

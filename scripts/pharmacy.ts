@@ -212,4 +212,18 @@ export const pharmacySeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'pharmacy-16',
+    name: '齐鑫堂大药房',
+    email: '',
+    address: '南京市江宁区东山街道天云社区园中路26号',
+    type: typeList.药店,
+    contact: '',
+    rating: null,
+    latitude: 31.95608,
+    longitude: 118.882573,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
