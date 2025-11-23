@@ -30,4 +30,18 @@ export const bbqList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'bbq-3',
+    name: '开尤木新疆和田烧烤(朗诗玲珑郡店)',
+    email: '',
+    address: '南京市江宁区朗诗玲珑郡南门旁',
+    type: typeList.烧烤,
+    contact: '',
+    rating: null,
+    latitude: 31.964038,
+    longitude: 118.889591,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

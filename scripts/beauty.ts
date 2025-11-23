@@ -30,4 +30,18 @@ export const beautySeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'beauty-3',
+    name: '三禾玺造型',
+    email: '',
+    address: '南京市江宁区东山街道石麟路111诗乐花园S1幢106室二楼',
+    type: typeList.美容,
+    contact: '13236400015',
+    rating: null,
+    latitude: 31.964036,
+    longitude: 118.889445,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

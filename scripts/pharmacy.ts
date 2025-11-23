@@ -226,4 +226,18 @@ export const pharmacySeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'pharmacy-17',
+    name: '仁慈堂大药房(石麟路店)',
+    email: '',
+    address: '南京市江宁区东山街道石麟路111号诗乐花园S1-106一楼',
+    type: typeList.药店,
+    contact: '15850668954',
+    rating: null,
+    latitude: 31.964063,
+    longitude: 118.889395,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

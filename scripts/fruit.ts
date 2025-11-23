@@ -114,4 +114,46 @@ export const fruitSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'fruit-9',
+    name: '常之鑫水果店',
+    email: '',
+    address: '南京市江宁区园中路10号上坊新城',
+    type: typeList.水果店,
+    contact: '',
+    rating: null,
+    latitude: 31.954197,
+    longitude: 118.888043,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'fruit-10',
+    name: '御品轩水果超市(融侨·悦城店)',
+    email: '',
+    address: '南京市江宁区万安南路9号融侨悦城',
+    type: typeList.水果店,
+    contact: '13816599228',
+    rating: null,
+    latitude: 31.957109,
+    longitude: 118.880472,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'fruit-11',
+    name: '甄果汇水果(朗诗玲珑郡店)',
+    email: '',
+    address: '南京市江宁区石麟路111号朗诗玲珑郡南门',
+    type: typeList.水果店,
+    contact: '15005187045 17705169094',
+    rating: null,
+    latitude: 31.964016,
+    longitude: 118.889796,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

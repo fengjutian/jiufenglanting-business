@@ -561,5 +561,33 @@ export const supermarketList: BusinessSeedEntry[] = [
     otherInfo: null,
     imageBase64: null,
     description: null
+  },
+  {
+    id: 'supermarket-34',
+    name: '梦之蓝鑫众烟酒茶',
+    email: '',
+    address: '南京市江宁区天宁路与园中路交叉口东40米',
+    type: typeList.超市,
+    contact: '15951089866',
+    rating: null,
+    latitude: 31.955359,
+    longitude: 118.885803,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'supermarket-35',
+    name: '仕派得便利店(朗诗玲珑郡店)',
+    email: '',
+    address: '南京市江宁区朗诗玲珑郡南门旁',
+    type: typeList.超市,
+    contact: '',
+    rating: null,
+    latitude: 31.964056,
+    longitude: 118.889107,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
   }
 ]

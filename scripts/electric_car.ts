@@ -16,4 +16,18 @@ export const electricCarList: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'electric-car-2',
+    name: '雅迪电动车啊辉车业天宁路',
+    email: '',
+    address: '南京市江宁区天宁雅居东北门旁',
+    type: typeList.电动车,
+    contact: '13358517302',
+    rating: null,
+    latitude: 31.956156,
+    longitude: 118.885465,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
