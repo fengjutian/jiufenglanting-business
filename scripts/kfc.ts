@@ -58,4 +58,18 @@ export const kfcSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 7,
+    name: '肯德基(江宁金茂悦店)',
+    email: '',
+    address: '南京市江宁区东山街道嘉茂路33号江宁金茂悦',
+    type: typeList.肯德基,
+    contact: '',
+    rating: null,
+    latitude: 31.960839,
+    longitude: 118.888268,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

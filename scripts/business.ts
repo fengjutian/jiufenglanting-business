@@ -21,6 +21,11 @@ import { graphicSeedEntries } from './graphic.ts'
 import { flowerSeedEntries } from './flower.ts'
 import { bbqList } from './bbq.ts'
 import { electricCarList } from './electric_car.ts'
+import { houseRentalList } from './house_rental.ts'
+import { gasStationSeedEntries } from './gas_station.ts'
+import { attractionSeedEntries } from './attraction.ts'
+
+
 
 export type BusinessSeedEntry = {
   id?: string | number
@@ -38,6 +43,9 @@ export type BusinessSeedEntry = {
 }
 
 export const raw: BusinessSeedEntry[] = [
+  ...attractionSeedEntries,
+  ...gasStationSeedEntries,
+  ...houseRentalList,
   ...hotelSeedEntries,
   ...kfcSeedEntries,
   ...bakeryList,
