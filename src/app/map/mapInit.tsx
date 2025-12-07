@@ -347,7 +347,15 @@ const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
 			>
 				<LiquidGlassCard width="180px" height="auto" draggable initial={{ x: 0, y: 0 }} dragMomentum={false}>
 					<LegendScroll>
-          数据：{businessList.length ?? 0}
+				  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+				    <div style={{ fontSize: 12, color: "#666" }}>数据：{businessList.length ?? 0}</div>
+				    <button
+				      onClick={() => setSelectedTypes([])}
+				      style={{ marginLeft: "auto", fontSize: 12, padding: "4px 8px", border: "none", borderRadius: 6, backgroundColor: "rgba(0,0,0,0.1)", color: "#333", cursor: "pointer" }}
+				    >
+				      全部取消
+				    </button>
+				  </div>
 				  {Object.entries(typeListMap)
 				    .sort(([, a], [, b]) => (typeCounts[b] ?? 0) - (typeCounts[a] ?? 0))
 				    .map(([cn, key]) => (
