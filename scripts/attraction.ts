@@ -926,4 +926,46 @@ export const attractionSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'attraction-67',
+    name: '南京梧桐大道(陵园路)',
+    email: '',
+    address: '南京市玄武区四方城西路与陵园路交叉口西60米',
+    type: typeList.景点,
+    contact: '',
+    rating: null,
+    latitude: 32.046017,
+    longitude: 118.841496,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'attraction-68',
+    name: '钟山风景名胜区明孝陵景区石象路神道',
+    email: '',
+    address: '南京市玄武区石象路7号中山陵园风景区',
+    type: typeList.景点,
+    contact: '025-84433582',
+    rating: null,
+    latitude: 32.047524,
+    longitude: 118.842383,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'attraction-69',
+    name: '明孝陵景区-神功圣德碑楼',
+    email: '',
+    address: '南京市玄武区石象路7号明孝陵景区(东南角)',
+    type: typeList.景点,
+    contact: '025-84442880',
+    rating: null,
+    latitude: 32.046673,
+    longitude: 118.84333,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]

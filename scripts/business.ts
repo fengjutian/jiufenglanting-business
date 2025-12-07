@@ -24,6 +24,7 @@ import { electricCarList } from './electric_car.ts'
 import { houseRentalList } from './house_rental.ts'
 import { gasStationSeedEntries } from './gas_station.ts'
 import { attractionSeedEntries } from './attraction.ts'
+import { universitySeedEntries } from './university.ts'
 
 
 
@@ -63,6 +64,7 @@ export const raw: BusinessSeedEntry[] = [
   ...flowerSeedEntries,
   ...bbqList,
   ...electricCarList,
+  ...universitySeedEntries,
   {
     id: 3,
     name: '老街大排档',
