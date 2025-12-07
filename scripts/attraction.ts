@@ -898,4 +898,32 @@ export const attractionSeedEntries: BusinessSeedEntry[] = [
     imageBase64: null,
     description: null
   },
+  {
+    id: 'attraction-65',
+    name: '广严寺',
+    email: '',
+    address: '南京市江宁区永丰路与徐东路交叉口西260米',
+    type: typeList.景点,
+    contact: '',
+    rating: null,
+    latitude: 31.791967,
+    longitude: 118.951493,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
+  {
+    id: 'attraction-66',
+    name: '河庄寺庙',
+    email: '',
+    address: '南京市江宁区永丰路',
+    type: typeList.景点,
+    contact: '',
+    rating: null,
+    latitude: 31.777068,
+    longitude: 118.949812,
+    otherInfo: null,
+    imageBase64: null,
+    description: null
+  },
 ]
